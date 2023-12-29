@@ -1,0 +1,260 @@
+---
+site-url: https://saforem2.github.io/ambivalent
+website:
+  open-graph: true
+  description: "ambivalent: Minimal, beautiful (+ highly-customizable) styles for Matplotlib"
+  page-navigation: true
+  title: "ambivalent"
+  site-url: "https:saforem2.github.io/ambivalent"
+  favicon: "./favicon.svg"
+  back-to-top-navigation: true
+  repo-url: https://github.com/saforem2/ambivalent
+  repo-actions: [source, edit, issue]
+  google-analytics: G-XVM2Y822Y1
+  # sidebar: false
+  twitter-card:
+    image: "./assets/thumbnail.png"
+    site: "@saforem2"
+    creator: "@saforem2"
+  navbar:
+    title: false
+    tools:
+      - icon: twitter
+        href: https://twitter.com/saforem2
+      - icon: github
+        menu:
+          - text: Source Code
+            url: https://github.com/saforem2/ambivalent/blob/master/index.qmd
+          - text: New Issue
+            url: https://github.com/saforem2/ambivalent/issues/new/choose
+editor:
+   render-on-save: true
+execute:
+   freeze: false
+format:
+  html: default
+  revealjs:
+    scrollable: true
+    output-file:  "slides.html"
+    appearance:
+      appearparents: true
+    code-line-numbers: false
+    code-link: false
+    code-copy: false
+    # callout-appearance: simple
+    # syntax-definitions:
+    #   - ./docs/python.xml
+    title-block-style: none
+    slide-number: c
+    title-slide-style: default
+    chalkboard:
+      buttons: false
+    auto-animate: true
+    reference-location: section
+    touch: true
+    pause: false
+    footnotes-hover: true
+    citations-hover: true
+    preview-links: true
+    controls-tutorial: true
+    controls: false
+    logo: "https://raw.githubusercontent.com/saforem2/llm-lunch-talk/main/docs/assets/anl.svg"
+    history: false
+    highlight-style: "atom-one"
+    css:
+      - css/default.css
+      - css/callouts.css
+      - css/code-callout.css
+      # - css/callouts-html.css
+    theme:
+      # - css/common.scss
+      # - css/dark.scss
+      # - css/syntax-dark.scss
+      # - css/slides-dark.scss
+      - css/common.scss
+      - css/dark.scss
+      - css/syntax-dark.scss
+      - css/dark-reveal.scss
+      # - white
+      # - css/light.scss
+      # - css/dark-reveal.scss
+      # - css/syntax-light.scss
+    self-contained: false
+    embed-resources: false
+    self-contained-math: false
+    center: true
+    default-image-extension: svg
+    code-overflow: scroll
+    html-math-method: katex
+    fig-align: center
+    # mermaid:
+    #   theme: dark
+    # revealjs-plugins:
+    #   - RevealMenu
+    # menu:
+    #   markers: true
+    #   themes:
+    #     - name: Dark
+    #       theme: css/dark.scss
+    #       highlightTheme: css/syntax-dark.scss
+    #     - name: Light
+    #       theme: css/light.scss
+    #       highlightTheme: css/syntax-light.scss
+    # themesPath: './docs/css/'
+  # gfm:
+  #  author: Sam Foreman
+  #  output-file: "index.md"
+  gfm:
+    author: Sam Foreman
+    toc: true
+    output-file: "ambivalent.md"
+---
+
+
+# `ambivalent`
+
+[~~`opinionated`~~](https://github.com/saforem2/opinionated) $\longrightarrow$ [**`ambivalent`**](https://github.com/saforem2/ambivalent)
+
+Clean, simple style for Matplotlib figures.
+
+Transparent backgrounds with grey text <a href='#'><img valign='middle'
+    alt='#838383' src='https://readme-swatches.vercel.app/838383'/></a> that
+are `{light, dark}`-mode independent.
+
+## Examples[^examples]
+
+[^examples]: Examples from [Matplotlib Examples](https://matplotlib.org/stable/gallery/index.html)
+
+::: {layout="[[40, 40]]" layout-valign="bottom" style="display: flex; text-align:center; align-items: flex-end;"}
+
+![[2D Density](https://matplotlib.org/stable/gallery/lines_bars_and_markers/scatter_hist.html#sphx-glr-gallery-lines-bars-and-markers-scatter-hist-py)](./assets/density-2d.svg){#fig-density .stretch}
+
+![[spectrum](https://matplotlib.org/stable/gallery/lines_bars_and_markers/spectrum_demo.html#sphx-glr-gallery-lines-bars-and-markers-spectrum-demo-py)](./assets/spectrum.svg){#fig-spectrum .stretch}
+
+:::
+
+::: {layout="[[40, 40]]" layout-valign="bottom" style="display: flex; text-align:center; align-items: flex-end;"}
+
+![[bar](https://matplotlib.org/stable/gallery/lines_bars_and_markers/bar_colors.html#sphx-glr-gallery-lines-bars-and-markers-bar-colors-py)](./assets/bar.svg){#fig-bar .stretch}
+
+![[scatter](https://matplotlib.org/stable/gallery/lines_bars_and_markers/scatter_demo2.html#sphx-glr-gallery-lines-bars-and-markers-scatter-demo2-py)](./assets/scatter.svg){#fig-scatter .stretch}
+
+:::
+
+## More Examples
+
+::: {#fig-chains style="display: flex; text-align:center;"}
+
+![chains](./assets/chains.svg)
+
+
+Figure from [`l2hmc-qcd` Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html)
+
+:::
+
+## Ridgeplot
+
+::: {#fig-ridgeplot style="display: flex; text-align:center;"}
+
+![ridgeplot](./assets/ridgeplot.svg){width="75%"}
+
+
+Figure from [Seaborn Example](https://seaborn.pydata.org/examples/kde_ridgeplot)
+
+:::
+
+
+---
+
+## Execution
+
+```{python}
+import warnings
+from ambivalent import STYLES
+import matplotlib.pyplot as plt
+import numpy as np
+
+warnings.filterwarnings("ignore")
+
+# Fixing random state for reproducibility
+np.random.seed(19680801)
+plt.style.use(STYLES['ambivalent'])
+
+# some random data
+x = np.random.randn(1000)
+y = np.random.randn(1000)
+
+
+def scatter_hist(x, y, ax, ax_histx, ax_histy, alpha: float = 0.4):
+    # no labels
+    ax_histx.tick_params(axis="x", labelbottom=False)
+    ax_histy.tick_params(axis="y", labelleft=False)
+
+    # the scatter plot:
+    ax.scatter(x, y, alpha=alpha)
+
+    # now determine nice limits by hand:
+    binwidth = 0.25
+    xymax = max(np.max(np.abs(x)), np.max(np.abs(y)))
+    lim = (int(xymax/binwidth) + 1) * binwidth
+
+    bins = np.arange(-lim, lim + binwidth, binwidth)
+    ax_histx.hist(x, bins=bins)
+    ax_histy.hist(y, bins=bins, orientation='horizontal')
+```
+
+### 2D Density
+
+```{python}
+#| code-fold: true
+#| code-summary: "Make the plot"
+#| label: fig-py-density2d
+#| output: true
+#| fig-cap: "2D Density plot"
+#| layout: [[100]]
+
+# Start with a square Figure.
+fig = plt.figure(figsize=(6, 6))
+# Add a gridspec with two rows and two columns and a ratio of 1 to 4 between
+# the size of the marginal axes and the main axes in both directions.
+# Also adjust the subplot parameters for a square plot.
+gs = fig.add_gridspec(2, 2,  width_ratios=(4, 1), height_ratios=(1, 4),
+                      left=0.1, right=0.9, bottom=0.1, top=0.9,
+                      wspace=0.15, hspace=0.15)
+# Create the Axes.
+ax = fig.add_subplot(gs[1, 0])
+ax_histx = fig.add_subplot(gs[0, 0], sharex=ax)
+ax_histy = fig.add_subplot(gs[1, 1], sharey=ax)
+_ = fig.axes[1].grid(False)
+_ = fig.axes[2].set_xticklabels([])
+_ = fig.axes[1].set_yticklabels([])
+_ = fig.axes[2].grid(False)
+_ = fig.axes[0].set_xticklabels(fig.axes[0].get_xticklabels())
+_ = fig.axes[0].set_yticklabels(fig.axes[0].get_yticklabels())
+
+# Draw the scatter plot and marginals.
+_ = scatter_hist(x, y, ax, ax_histx, ax_histy)
+_ = plt.show()
+```
+
+
+::: {.callout-tip icon=false title='[{{< iconify material-symbols ecg-heart >}} Status]{style="color: #FF5252;"}' collapse="false" style="text-align: left!important; width:100%; border-color: #FF5252!important; background-color: rgba(255, 82, 82, 0.1); opacity:100%;"}
+
+```{python}
+#| echo: false
+import datetime
+from rich import print
+now = datetime.datetime.now()
+day = now.strftime('%m/%d/%Y')
+time = now.strftime('%H:%M:%S')
+print(' '.join([
+  "[dim italic]Last Updated[/]:",
+  f"[#F06292]{day}[/]",
+  f"[dim]@[/]",
+  f"[#1A8FFF]{time}[/]"
+]))
+```
+
+[![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsaforem2.github.io%2Fambivalent&count_bg=%23222222&title_bg=%23303030&icon=&icon_color=%23E7E7E7)]{style="text-align:center;"}
+
+:::
