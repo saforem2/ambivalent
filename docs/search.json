@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ambivalent",
+    "section": "",
+    "text": "opinionated \\longrightarrow ambivalent\nClean, simple style for Matplotlib figures.\nTransparent backgrounds with grey text  that are {light, dark}-mode independent."
+  },
+  {
+    "objectID": "index.html#examplesexamples",
+    "href": "index.html#examplesexamples",
+    "title": "ambivalent",
+    "section": "Examples1",
+    "text": "Examples1\n\n\n\n\n\n\nFigure 1: 2D Density\n\n\n\n\n\n\n\nFigure 2: spectrum\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: bar\n\n\n\n\n\n\n\nFigure 4: scatter"
+  },
+  {
+    "objectID": "index.html#more-examples",
+    "href": "index.html#more-examples",
+    "title": "ambivalent",
+    "section": "More Examples",
+    "text": "More Examples\n\n\n\n\n\nchains\n\n\nFigure 5: Figure from l2hmc-qcd Notebook"
+  },
+  {
+    "objectID": "index.html#ridgeplot",
+    "href": "index.html#ridgeplot",
+    "title": "ambivalent",
+    "section": "Ridgeplot",
+    "text": "Ridgeplot\n\n\n\n\n\nridgeplot\n\n\nFigure 6: Figure from Seaborn Example"
+  },
+  {
+    "objectID": "index.html#execution",
+    "href": "index.html#execution",
+    "title": "ambivalent",
+    "section": "Execution",
+    "text": "Execution\n\nimport warnings\nfrom ambivalent import STYLES\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nwarnings.filterwarnings(\"ignore\")\n\n# Fixing random state for reproducibility\nnp.random.seed(19680801)\nplt.style.use(STYLES['ambivalent'])\n\n# some random data\nx = np.random.randn(1000)\ny = np.random.randn(1000)\n\n\ndef scatter_hist(x, y, ax, ax_histx, ax_histy, alpha: float = 0.4):\n    # no labels\n    ax_histx.tick_params(axis=\"x\", labelbottom=False)\n    ax_histy.tick_params(axis=\"y\", labelleft=False)\n\n    # the scatter plot:\n    ax.scatter(x, y, alpha=alpha)\n\n    # now determine nice limits by hand:\n    binwidth = 0.25\n    xymax = max(np.max(np.abs(x)), np.max(np.abs(y)))\n    lim = (int(xymax/binwidth) + 1) * binwidth\n\n    bins = np.arange(-lim, lim + binwidth, binwidth)\n    ax_histx.hist(x, bins=bins)\n    ax_histy.hist(y, bins=bins, orientation='horizontal')\n\n\n2D Density\n\n\nMake the plot\n# Start with a square Figure.\nfig = plt.figure(figsize=(6, 6))\n# Add a gridspec with two rows and two columns and a ratio of 1 to 4 between\n# the size of the marginal axes and the main axes in both directions.\n# Also adjust the subplot parameters for a square plot.\ngs = fig.add_gridspec(2, 2,  width_ratios=(4, 1), height_ratios=(1, 4),\n                      left=0.1, right=0.9, bottom=0.1, top=0.9,\n                      wspace=0.15, hspace=0.15)\n# Create the Axes.\nax = fig.add_subplot(gs[1, 0])\nax_histx = fig.add_subplot(gs[0, 0], sharex=ax)\nax_histy = fig.add_subplot(gs[1, 1], sharey=ax)\n_ = fig.axes[1].grid(False)\n_ = fig.axes[2].set_xticklabels([])\n_ = fig.axes[1].set_yticklabels([])\n_ = fig.axes[2].grid(False)\n_ = fig.axes[0].set_xticklabels(fig.axes[0].get_xticklabels())\n_ = fig.axes[0].set_yticklabels(fig.axes[0].get_yticklabels())\n\n# Draw the scatter plot and marginals.\n_ = scatter_hist(x, y, ax, ax_histx, ax_histy)\n_ = plt.show()\n\n\n\n\n\n\n\nFigure 7: 2D Density plot\n\n\n\n\n\n\n\n\n\n\n\n\n Status\n\n\n\n\n\n\n\nLast Updated: 12/28/2023 @ 18:48:20"
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "ambivalent",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nExamples from Matplotlib Examples↩︎"
+  },
+  {
+    "objectID": "slides.html#examplesexamples",
+    "href": "slides.html#examplesexamples",
+    "title": "ambivalent",
+    "section": "Examples1",
+    "text": "Examples1\n\n\n\n\n\n\nFigure 1: 2D Density\n\n\n\n\n\n\n\nFigure 2: spectrum\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: bar\n\n\n\n\n\n\n\nFigure 4: scatter\n\n\n\n\n\nExamples from Matplotlib Examples"
+  },
+  {
+    "objectID": "slides.html#more-examples",
+    "href": "slides.html#more-examples",
+    "title": "ambivalent",
+    "section": "More Examples",
+    "text": "More Examples\n\nchains"
+  },
+  {
+    "objectID": "slides.html#ridgeplot",
+    "href": "slides.html#ridgeplot",
+    "title": "ambivalent",
+    "section": "Ridgeplot",
+    "text": "Ridgeplot\n\nridgeplot"
+  },
+  {
+    "objectID": "slides.html#execution",
+    "href": "slides.html#execution",
+    "title": "ambivalent",
+    "section": "Execution",
+    "text": "Execution\n2D Density\n\n\n\n\n\n\nFigure 7: 2D Density plot\n\n\n\n\n\n\n\n\n Status\n\n\n\n\nLast Updated: 12/28/2023 @ 18:48:22"
+  }
+]
