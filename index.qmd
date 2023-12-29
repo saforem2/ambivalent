@@ -1,33 +1,5 @@
 ---
 site-url: https://saforem2.github.io/ambivalent
-website:
-  open-graph: true
-  description: "ambivalent: Minimal, beautiful (+ highly-customizable) styles for Matplotlib"
-  page-navigation: true
-  title: "ambivalent"
-  default-image-extension: svg
-  site-url: "https:saforem2.github.io/ambivalent"
-  favicon: "./favicon.svg"
-  back-to-top-navigation: true
-  repo-url: https://github.com/saforem2/ambivalent
-  repo-actions: [source, edit, issue]
-  google-analytics: G-XVM2Y822Y1
-  # sidebar: false
-  twitter-card:
-    image: "./assets/thumbnail.png"
-    site: "@saforem2"
-    creator: "@saforem2"
-  navbar:
-    title: false
-    tools:
-      - icon: twitter
-        href: https://twitter.com/saforem2
-      - icon: github
-        menu:
-          - text: Source Code
-            url: https://github.com/saforem2/ambivalent/blob/master/index.qmd
-          - text: New Issue
-            url: https://github.com/saforem2/ambivalent/issues/new/choose
 editor:
    render-on-save: true
 execute:
@@ -35,77 +7,9 @@ execute:
 format:
   html: default
   revealjs:
-    scrollable: true
-    output-file:  "slides.html"
-    appearance:
-      appearparents: true
-    code-line-numbers: false
-    code-link: false
-    code-copy: false
-    # callout-appearance: simple
-    # syntax-definitions:
-    #   - ./docs/python.xml
-    title-block-style: none
-    slide-number: c
-    title-slide-style: default
-    chalkboard:
-      buttons: false
-    auto-animate: true
-    reference-location: section
-    touch: true
-    pause: false
-    footnotes-hover: true
-    citations-hover: true
-    preview-links: true
-    controls-tutorial: true
-    controls: false
-    logo: "https://raw.githubusercontent.com/saforem2/llm-lunch-talk/main/docs/assets/anl.svg"
-    history: false
-    highlight-style: "atom-one"
-    css:
-      - css/default.css
-      - css/callouts.css
-      - css/code-callout.css
-      # - css/callouts-html.css
-    theme:
-      # - css/common.scss
-      # - css/dark.scss
-      # - css/syntax-dark.scss
-      # - css/slides-dark.scss
-      - css/common.scss
-      - css/dark.scss
-      - css/syntax-dark.scss
-      - css/dark-reveal.scss
-      # - white
-      # - css/light.scss
-      # - css/dark-reveal.scss
-      # - css/syntax-light.scss
-    self-contained: false
-    embed-resources: false
-    self-contained-math: false
-    center: true
-    default-image-extension: svg
-    code-overflow: scroll
-    html-math-method: katex
-    fig-align: center
-    # mermaid:
-    #   theme: dark
-    # revealjs-plugins:
-    #   - RevealMenu
-    # menu:
-    #   markers: true
-    #   themes:
-    #     - name: Dark
-    #       theme: css/dark.scss
-    #       highlightTheme: css/syntax-dark.scss
-    #     - name: Light
-    #       theme: css/light.scss
-    #       highlightTheme: css/syntax-light.scss
-    # themesPath: './docs/css/'
-  # gfm:
-  #  author: Sam Foreman
-  #  output-file: "index.md"
+    output-file: slides.html
   gfm:
+    default-image-extension: svg
     author: Sam Foreman
     output-file: "ambivalent.md"
 ---
@@ -117,9 +21,8 @@ format:
 
 Clean, simple style for Matplotlib figures.
 
-Transparent backgrounds with grey text <a href='#'><img valign='middle'
-    alt='#838383' src='https://readme-swatches.vercel.app/838383'/></a> that
-are `{light, dark}`-mode independent.
+Transparent backgrounds with grey text $\textcolor{#838383}{\blacksquare}$ that
+are accessible / legible and `{light, dark}`-mode independent.
 
 ## Examples[^examples]
 
@@ -238,7 +141,7 @@ plt.style.use(STYLES['ambivalent'])
 #| code-fold: true
 #| code-summary: "View Code"
 #| label: fig-py-tips-density
-#| output: true
+#| output: asis
 #| fig-cap: "Tips -- Density Plot"
 #| layout: [[100]]
 import seaborn as sns
@@ -357,6 +260,7 @@ with mpl.rc_context(plt.rcParams.update({'axes.grid': False})):
 #| label: fig-py-mpl-hists
 #| output: true
 #| fig-cap: "Histograms with Matplotlib"
+#| layout: [[100]]
 import matplotlib.pyplot as plt
 import numpy as np
 

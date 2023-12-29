@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "ambivalent 🤷🏻‍♂️",
     "section": "",
-    "text": "opinionated \\longrightarrow ambivalent\nClean, simple style for Matplotlib figures.\nTransparent backgrounds with grey text  that are {light, dark}-mode independent."
+    "text": "opinionated \\longrightarrow ambivalent\nClean, simple style for Matplotlib figures.\nTransparent backgrounds with grey text \\textcolor{#838383}{\\blacksquare} that are accessible / legible and {light, dark}-mode independent."
   },
   {
     "objectID": "index.html#examplesexamples",
@@ -32,7 +32,7 @@
     "href": "index.html#seaborn-tips-dataset",
     "title": "ambivalent 🤷🏻‍♂️",
     "section": "seaborn Tips Dataset",
-    "text": "seaborn Tips Dataset\n\nTips Dataset Example\nSeaborn Gallery\n\n\n\nView Code\nimport seaborn as sns\n\ntips = sns.load_dataset(\"tips\")\ntips.head()\n\nfig, ax = plt.subplots(figsize=(6, 6))  # , ncols=2)\n\n_ = sns.kdeplot(\n   data=tips, x=\"total_bill\", hue=\"size\",\n   fill=True, common_norm=False, palette=\"flare_r\",\n   alpha=.3, linewidth=0,\n   ax=ax,  # [0],\n)\n_ = ax.set_ylabel('')\n# _ = sns.kdeplot(\n#    data=tips, x=\"tip\", hue=\"size\",\n#    fill=True, common_norm=False, palette=\"crest\",\n#    alpha=.3, linewidth=0,\n#    ax=ax[1],\n# )\n\n\n\n\n\n\n\nFigure 13: Tips – Density Plot"
+    "text": "seaborn Tips Dataset\n\nTips Dataset Example\nSeaborn Gallery\n\n\nView Code\nimport seaborn as sns\n\ntips = sns.load_dataset(\"tips\")\ntips.head()\n\nfig, ax = plt.subplots(figsize=(6, 6))  # , ncols=2)\n\n_ = sns.kdeplot(\n   data=tips, x=\"total_bill\", hue=\"size\",\n   fill=True, common_norm=False, palette=\"flare_r\",\n   alpha=.3, linewidth=0,\n   ax=ax,  # [0],\n)\n_ = ax.set_ylabel('')\n# _ = sns.kdeplot(\n#    data=tips, x=\"tip\", hue=\"size\",\n#    fill=True, common_norm=False, palette=\"crest\",\n#    alpha=.3, linewidth=0,\n#    ax=ax[1],\n# )\n\n\n\n\nFigure 13: Tips – Density Plot"
   },
   {
     "objectID": "index.html#seaborn-scatter-plot",
@@ -60,7 +60,7 @@
     "href": "index.html#matplotlib-histograms",
     "title": "ambivalent 🤷🏻‍♂️",
     "section": "Matplotlib Histograms",
-    "text": "Matplotlib Histograms\n\n\nView Code\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nn_bins = 10\nx = np.random.randn(1000, 3)\n\nplt.rcParams['axes.grid'] = True\n\nfig, ((ax0, ax1), (ax2, ax3)) = plt.subplots(nrows=2, ncols=2)\n\ncolors = ['#333333', '#666666', '#999999']\nax0.hist(x, n_bins, density=True, histtype='bar', color=colors, label=colors)\n_ = ax0.legend()\n_ = ax0.set_title('bars with legend')\n\n_ = ax1.hist(x, n_bins, density=True, histtype='bar', stacked=True, alpha=0.4)\n_ = ax1.set_title('stacked bar')\n\n_ = ax2.hist(x, n_bins, histtype='step', stacked=True, fill=False)\n_ = ax2.set_title('stack step (unfilled)')\n\n# Make a multiple-histogram of data-sets with different length.\nx_multi = [np.random.randn(n) for n in [10000, 5000, 2000]]\n_ = ax3.hist(x_multi, n_bins, histtype='bar')\n_ = ax3.set_title('different sample sizes')\n\n_ = fig.tight_layout()\nplt.show()\n\n\n\n\n\nFigure 17: Histograms with Matplotlib\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Status\n\n\n\n\n\n\n\n\nLast Updated: 12/29/2023 @ 01:10:41"
+    "text": "Matplotlib Histograms\n\n\nView Code\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nn_bins = 10\nx = np.random.randn(1000, 3)\n\nplt.rcParams['axes.grid'] = True\n\nfig, ((ax0, ax1), (ax2, ax3)) = plt.subplots(nrows=2, ncols=2)\n\ncolors = ['#333333', '#666666', '#999999']\nax0.hist(x, n_bins, density=True, histtype='bar', color=colors, label=colors)\n_ = ax0.legend()\n_ = ax0.set_title('bars with legend')\n\n_ = ax1.hist(x, n_bins, density=True, histtype='bar', stacked=True, alpha=0.4)\n_ = ax1.set_title('stacked bar')\n\n_ = ax2.hist(x, n_bins, histtype='step', stacked=True, fill=False)\n_ = ax2.set_title('stack step (unfilled)')\n\n# Make a multiple-histogram of data-sets with different length.\nx_multi = [np.random.randn(n) for n in [10000, 5000, 2000]]\n_ = ax3.hist(x_multi, n_bins, histtype='bar')\n_ = ax3.set_title('different sample sizes')\n\n_ = fig.tight_layout()\nplt.show()\n\n\n\n\n\n\n\nFigure 17: Histograms with Matplotlib\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Status\n\n\n\n\n\n\n\n\nLast Updated: 12/29/2023 @ 10:41:46"
   },
   {
     "objectID": "index.html#footnotes",
@@ -95,7 +95,7 @@
     "href": "slides.html#seaborn-tips-dataset",
     "title": "ambivalent 🤷🏻‍♂️",
     "section": "seaborn Tips Dataset",
-    "text": "seaborn Tips Dataset\n\nTips Dataset Example\nSeaborn Gallery\n\n\n\n\n\n\n\nFigure 13: Tips – Density Plot"
+    "text": "seaborn Tips Dataset\n\nTips Dataset Example\nSeaborn Gallery\n\n\nFigure 13: Tips – Density Plot"
   },
   {
     "objectID": "slides.html#seaborn-scatter-plot",
@@ -123,6 +123,6 @@
     "href": "slides.html#matplotlib-histograms",
     "title": "ambivalent 🤷🏻‍♂️",
     "section": "Matplotlib Histograms",
-    "text": "Matplotlib Histograms\n\n\n\n\n\nFigure 17: Histograms with Matplotlib\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Status\n\n\n\n\n\nLast Updated: 12/29/2023 @ 01:10:51"
+    "text": "Matplotlib Histograms\n\n\n\n\n\n\nFigure 17: Histograms with Matplotlib\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Status\n\n\n\n\n\nLast Updated: 12/29/2023 @ 10:41:56"
   }
 ]

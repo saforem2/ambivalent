@@ -41,6 +41,69 @@ format:
     footnotes-hover: true
     header-includes: |
       <link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet" />
+  revealjs:
+    scrollable: true
+    output-file:  "slides.html"
+    appearance:
+      appearparents: true
+    code-line-numbers: false
+    code-link: false
+    code-copy: false
+    # callout-appearance: simple
+    # syntax-definitions:
+    #   - ./docs/python.xml
+    title-block-style: none
+    slide-number: c
+    title-slide-style: default
+    chalkboard:
+      buttons: false
+    auto-animate: true
+    reference-location: section
+    touch: true
+    pause: false
+    footnotes-hover: true
+    citations-hover: true
+    preview-links: true
+    controls-tutorial: true
+    controls: false
+    logo: "https://raw.githubusercontent.com/saforem2/llm-lunch-talk/main/docs/assets/anl.svg"
+    history: false
+    highlight-style: "atom-one"
+    css:
+      - css/default.css
+      - css/callouts.css
+      - css/code-callout.css
+    theme:
+      - css/common.scss
+      - css/dark.scss
+      - css/syntax-dark.scss
+      - css/dark-reveal.scss
+      # - white
+      # - css/light.scss
+      # - css/dark-reveal.scss
+      # - css/syntax-light.scss
+    self-contained: false
+    embed-resources: false
+    self-contained-math: false
+    center: true
+    default-image-extension: svg
+    code-overflow: scroll
+    html-math-method: katex
+    fig-align: center
+    # mermaid:
+    #   theme: dark
+    # revealjs-plugins:
+    #   - RevealMenu
+    # menu:
+    #   markers: true
+    #   themes:
+    #     - name: Dark
+    #       theme: css/dark.scss
+    #       highlightTheme: css/syntax-dark.scss
+    #     - name: Light
+    #       theme: css/light.scss
+    #       highlightTheme: css/syntax-light.scss
+    # themesPath: './docs/css/'
   # gfm:
-  #   author: Sam Foreman
-
+  #  author: Sam Foreman
+  #  output-file: "index.md"

@@ -8,9 +8,9 @@ $\longrightarrow$
 
 Clean, simple style for Matplotlib figures.
 
-Transparent backgrounds with grey text <a href='#'><img valign='middle'
-    alt='#838383' src='https://readme-swatches.vercel.app/838383'/></a>
-that are `{light, dark}`-mode independent.
+Transparent backgrounds with grey text
+$\textcolor{#838383}{\blacksquare}$ that are accessible / legible and
+`{light, dark}`-mode independent.
 
 ## Examples[^1]
 
@@ -251,7 +251,7 @@ _ = ax.set_ylabel('')
 </details>
 
 <img
-src="./docs/index_files/figure-commonmark/fig-py-tips-density-output-1.svg"
+src="docs/index_files/figure-commonmark/fig-py-tips-density-output-1.svg"
 id="fig-py-tips-density" alt="Figure 13: Tips – Density Plot" />
 
 ## `seaborn` Scatter Plot
@@ -282,7 +282,7 @@ _ = sns.scatterplot(x="carat", y="price",
 </details>
 
 <img
-src="./docs/index_files/figure-commonmark/fig-py-diamonds-scatter-output-1.svg"
+src="docs/index_files/figure-commonmark/fig-py-diamonds-scatter-output-1.svg"
 id="fig-py-diamonds-scatter"
 alt="Figure 14: scatter plot with markers of varying size and color" />
 
@@ -316,7 +316,7 @@ _ = plt.show()
 </details>
 
 <img
-src="./docs/index_files/figure-commonmark/fig-py-hist-scatter-output-1.svg"
+src="docs/index_files/figure-commonmark/fig-py-hist-scatter-output-1.svg"
 id="fig-py-hist-scatter"
 alt="Figure 15: Combo histogram + Scatter Plot with Density Contours" />
 
@@ -347,7 +347,7 @@ with mpl.rc_context(plt.rcParams.update({'axes.grid': False})):
 
 </details>
 
-<img src="./docs/index_files/figure-commonmark/fig-py-kde-2d-output-1.svg"
+<img src="docs/index_files/figure-commonmark/fig-py-kde-2d-output-1.svg"
 id="fig-py-kde-2d"
 alt="Figure 16: Joint Distribution with Kernel Density Estimation" />
 
@@ -389,7 +389,8 @@ plt.show()
 
 </details>
 
-<img src="./docs/index_files/figure-commonmark/fig-py-mpl-hists-output-1.svg" id="fig-py-mpl-hists" alt="Figure 17: Histograms with Matplotlib" />
+<img src="docs/index_files/figure-commonmark/fig-py-mpl-hists-output-1.svg"
+id="fig-py-mpl-hists" alt="Figure 17: Histograms with Matplotlib" />
 
 <!-- ```{python} -->
 <!-- #| code-fold: true -->
@@ -527,7 +528,7 @@ plt.show()
 >
 > <span style="text-align:center;">![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsaforem2.github.io%2Fambivalent&count_bg=%23222222&title_bg=%23303030&icon=&icon_color=%23E7E7E7)</span>
 >
-> <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f; font-style: italic">Last Updated</span>: <span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">12</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">29</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">2023</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">@</span> <span style="color: #1a8fff; text-decoration-color: #1a8fff; font-weight: bold">01:11:00</span>
+> <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f; font-style: italic">Last Updated</span>: <span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">12</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">29</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">2023</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">@</span> <span style="color: #1a8fff; text-decoration-color: #1a8fff; font-weight: bold">10:42:06</span>
 > </pre>
 
 </div>
