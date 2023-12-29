@@ -16,8 +16,8 @@ website:
     site: "@saforem2"
     creator: "@saforem2"
   # sidebar:
-  #   # header: "<code>wordplay</code>"
-  #   title: "<code>wordplay</code>"
+  #   # header: "<code>ambivalent</code>"
+  #   title: "<code>ambivalent</code>"
   #   style: floating
   #   contents:
   #     - url: "./quarto/shakespeare.qmd"
@@ -45,7 +45,7 @@ website:
       - href: https://twitter.com/saforem2
         text: "[{{< iconify line-md twitter >}}]{style='font-size: 1.15em;'}"
         aria-label: Twitter
-      - href: https://github.com/saforem2/wordplay
+      - href: https://github.com/saforem2/ambivalent
         text: "[{{< iconify line-md github-loop >}}]{style='font-size: 1.15em;'}"
         aria-label: GitHub
 
