@@ -135,8 +135,7 @@ def scatter_hist(x, y, ax, ax_histx, ax_histy, alpha: float = 0.4):
 
 ### 2D Density
 
-<details>
-<summary>Make the plot</summary>
+<details closed><summary>Make the plot</summary>
 
 ``` python
 # Start with a square Figure.
@@ -165,8 +164,10 @@ _ = plt.show()
 
 </details>
 
-<img src="index_files/figure-commonmark/fig-py-density2d-output-1.png"
+<img src="./docs/index_files/figure-html/fig-py-density2d-output-1.png"
 id="fig-py-density2d" alt="Figure 7: 2D Density plot" />
+
+---
 
 <div>
 
