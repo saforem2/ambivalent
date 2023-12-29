@@ -5,6 +5,7 @@ website:
   description: "ambivalent: Minimal, beautiful (+ highly-customizable) styles for Matplotlib"
   page-navigation: true
   title: "ambivalent"
+  default-image-extension: svg
   site-url: "https:saforem2.github.io/ambivalent"
   favicon: "./favicon.svg"
   back-to-top-navigation: true
@@ -143,6 +144,8 @@ are `{light, dark}`-mode independent.
 
 ## More Examples
 
+### InferenceData
+
 ::: {#fig-chains style="display: flex; text-align:center;"}
 
 ![chains](./assets/chains.svg)
@@ -152,7 +155,7 @@ Figure from [`l2hmc-qcd` Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hm
 
 :::
 
-## Ridgeplot
+### Ridgeplot
 
 ::: {#fig-ridgeplot style="display: flex; text-align:center;"}
 

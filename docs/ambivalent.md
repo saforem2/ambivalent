@@ -4,7 +4,8 @@ Sam Foreman
 
 - [Examples](#examplesexamples)
 - [More Examples](#more-examples)
-- [Ridgeplot](#ridgeplot)
+  - [InferenceData](#inferencedata)
+  - [Ridgeplot](#ridgeplot)
 - [Execution](#execution)
   - [2D Density](#d-density)
 
@@ -74,6 +75,8 @@ data-fig.extended="false" alt="Figure 4: scatter" /></p>
 
 ## More Examples
 
+### InferenceData
+
 <div id="fig-chains" style="display: flex; text-align:center;">
 
 ![chains](./assets/chains.svg)
@@ -83,7 +86,7 @@ Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html)
 
 </div>
 
-## Ridgeplot
+### Ridgeplot
 
 <div id="fig-ridgeplot" style="display: flex; text-align:center;">
 
@@ -172,7 +175,7 @@ id="fig-py-density2d" alt="Figure 7: 2D Density plot" />
 
 > **<span style="color: #FF5252;"> Status</span>**
 >
-> <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f; font-style: italic">Last Updated</span>: <span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">12</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">28</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">2023</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">@</span> <span style="color: #1a8fff; text-decoration-color: #1a8fff; font-weight: bold">18:48:23</span>
+> <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f; font-style: italic">Last Updated</span>: <span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">12</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">28</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">2023</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">@</span> <span style="color: #1a8fff; text-decoration-color: #1a8fff; font-weight: bold">19:11:08</span>
 > </pre>
 >
 > <span style="text-align:center;">![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsaforem2.github.io%2Fambivalent&count_bg=%23222222&title_bg=%23303030&icon=&icon_color=%23E7E7E7)</span>

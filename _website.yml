@@ -1,27 +1,28 @@
 website:
-  open-graph: true
-  description: "wordplay: A minimal LLM implementation for research and education."
+  description: "ambivalent: Minimal, beautiful (+ highly-customizable) styles for Matplotlib."
   page-navigation: true
-  title: "wordplay"
-  site-url: "https://saforem2.github.io/wordplay"
+  title: "ambivalent"
+  site-url: "https://saforem2.github.io/ambivalent"
   favicon: "./favicon.svg"
   back-to-top-navigation: true
-  repo-url: https://github.com/saforem2/wordplay
+  repo-url: https://github.com/saforem2/ambivalent
   repo-actions: [source, edit, issue]
   google-analytics: G-XVM2Y822Y1
   # sidebar: false
+  open-graph:
+    image: "./assets/thumbnail.png"
   twitter-card:
     image: "./assets/thumbnail.png"
     site: "@saforem2"
     creator: "@saforem2"
-  sidebar:
-    # header: "<code>wordplay</code>"
-    title: "<code>wordplay</code>"
-    style: floating
-    contents:
-      - url: "./quarto/shakespeare.qmd"
-      - url: "./quarto/gpt2-medium.qmd"
-      - url: "./quarto/gpt2-xl.qmd"
+  # sidebar:
+  #   # header: "<code>wordplay</code>"
+  #   title: "<code>wordplay</code>"
+  #   style: floating
+  #   contents:
+  #     - url: "./quarto/shakespeare.qmd"
+  #     - url: "./quarto/gpt2-medium.qmd"
+  #     - url: "./quarto/gpt2-xl.qmd"
   # sidebar:
   #   style: floating
   #   contents: auto
