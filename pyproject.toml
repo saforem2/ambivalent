@@ -73,6 +73,20 @@ allow-direct-references = true
 
 
 [tool.hatch.build.targets.sdist]
+exclude = [
+  "src/ambivalent/outputs/",
+  "**old**",
+  "/.github",
+  "/docs",
+  "/_extensions",
+  "/css",
+  "/assets",
+  "/fonts",
+  "/img",
+  "/index_files",
+  "/qmd",
+  "/venvs",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/ambivalent"]
