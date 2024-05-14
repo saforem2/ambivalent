@@ -2,8 +2,8 @@
 site-url: https://saforem2.github.io/ambivalent
 # editor:
 #    render-on-save: true
-# execute:
-#    freeze: false
+execute:
+   freeze: auto
 format:
   html: default
   # revealjs:
@@ -83,6 +83,7 @@ _ = sns.kdeplot(
    ax=ax,  # [0],
 )
 _ = ax.set_ylabel('')
+plt.show()
 ```
 
 <!-- </details> -->
@@ -225,6 +226,8 @@ plt.show()
 
 ## Gallery[^examples]
 
+<details closed><summary><italic>More Examples...</italic></summary>
+
 [^examples]: Examples from [Matplotlib Examples](https://matplotlib.org/stable/gallery/index.html)
 
 
@@ -258,15 +261,18 @@ plt.show()
 
 :::
 
-<details closed><summary><italic>More Examples...</italic></summary>
 
-::: {.stretch layout="[[31, 31, 31]]" layout-valign="bottom" style="display: flex; text-align:center!important;"}
+<!-- ::: {.stretch layout="[[31, 31, 31]]" layout-valign="bottom" style="display: flex; text-align:center!important;"} -->
 
-![$|J_{f}|$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_22.svg){#fig-ridgeplot1 .stretch}
+::: {#fig-chains-J layout-ncol=3}
 
-![$|J_{b}|$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_23.svg){#fig-ridgeplot2 .stretch}
+![$|J_{f}|$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_22.svg){.stretch}
 
-![$|J|$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_21.svg){#fig-ridgeplot3 .stretch}
+![$|J_{b}|$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_23.svg){.stretch}
+
+![$|J|$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_21.svg){.stretch}
+
+$|J|$ during training
 
 :::
 
@@ -277,8 +283,6 @@ plt.show()
 Figure from [`l2hmc-qcd` Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html#inference)
 
 :::
-
-### InferenceData
 
 ::: {#fig-xeps style="display: flex; text-align:center;"}
 
@@ -298,7 +302,6 @@ $\varepsilon_{x}$ during training
 
 ::: {#fig-combined-chains layout="[[80]]" style="display: flex; text-align:center;"}
 
-
 ![$\sum \delta Q$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_48_1.svg){#fig-dQhist .stretch}
 
 Figure from [`l2hmc-qcd` Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html)
@@ -306,7 +309,6 @@ Figure from [`l2hmc-qcd` Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hm
 :::
 
 </details>
-
 
 
 <!-- ```{python} -->

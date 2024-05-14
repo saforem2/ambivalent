@@ -38,6 +38,7 @@ plt.style.use(ambivalent.STYLES['ambivalent'])
 
 <!-- <details closed><summary><code>code</code>:</summary> -->
 <details class="code-fold">
+
 <summary>Code</summary>
 
 ``` python
@@ -55,22 +56,15 @@ _ = sns.kdeplot(
    ax=ax,  # [0],
 )
 _ = ax.set_ylabel('')
+plt.show()
 ```
 
 </details>
-<div id="fig-py-tips-density">
 
 ![](index_files/figure-commonmark/fig-py-tips-density-output-1.svg)
 
-
-Figure 1: Tips – Density Plot
-
-</div>
-<!-- </details> -->
-
 ### `seaborn` Scatter Plot
 
-<!-- <details closed><summary><code>code</code>:</summary> -->
 <details class="code-fold">
 <summary>Code</summary>
 
@@ -95,19 +89,11 @@ _ = sns.scatterplot(x="carat", y="price",
 ```
 
 </details>
-<div id="fig-py-diamonds-scatter">
 
 ![](index_files/figure-commonmark/fig-py-diamonds-scatter-output-1.svg)
 
-
-Figure 2: scatter plot with markers of varying size and color
-
-</div>
-<!-- </details> -->
-
 ### Histogram + Scatter Plot
 
-<!-- <details closed><summary><code>code</code>:</summary> -->
 <details class="code-fold">
 <summary>Code</summary>
 
@@ -134,19 +120,11 @@ _ = plt.show()
 ```
 
 </details>
-<div id="fig-py-hist-scatter">
 
 ![](index_files/figure-commonmark/fig-py-hist-scatter-output-1.svg)
 
-
-Figure 3: Combo histogram + Scatter Plot with Density Contours
-
-</div>
-<!-- </details> -->
-
 ### Jointplot
 
-<!-- <details closed><summary><code>code</code>:</summary> -->
 <details class="code-fold">
 <summary>Code</summary>
 
@@ -170,19 +148,11 @@ with mpl.rc_context(plt.rcParams.update({'axes.grid': False})):
 ```
 
 </details>
-<div id="fig-py-kde-2d">
 
 ![](index_files/figure-commonmark/fig-py-kde-2d-output-1.svg)
 
-
-Figure 4: Joint Distribution with Kernel Density Estimation
-
-</div>
-<!-- </details> -->
-
 ### Matplotlib Histograms
 
-<!-- <details closed><summary><code>code</code>:</summary> -->
 <details class="code-fold">
 <summary>Code</summary>
 
@@ -218,18 +188,15 @@ plt.show()
 ```
 
 </details>
-<div id="fig-py-mpl-hists">
 
 ![](index_files/figure-commonmark/fig-py-mpl-hists-output-1.svg)
 
-
-Figure 5: Histograms with Matplotlib
-
-</div>
-<!-- </details> -->
-
 ## Gallery[^1]
 
+<details closed>
+<summary>
+<italic>More Examples…</italic>
+</summary>
 <!-- ::: {#fig-gallery style="display: flex; flex-direction:row; align-items: flex-end"} -->
 
 <div layout-nrow="3">
@@ -252,73 +219,34 @@ Figure 5: Histograms with Matplotlib
 
 </div>
 
-<details closed>
-<summary>
-<italic>More Examples…</italic>
-</summary>
+<!-- ::: {.stretch layout="[[31, 31, 31]]" layout-valign="bottom" style="display: flex; text-align:center!important;"} -->
 
-<div>
+<img
+src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_22.svg"
+class="stretch" alt="|J_{f}|" />
 
-</div>
+<img
+src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_23.svg"
+class="stretch" alt="|J_{b}|" />
 
-<div id="fig-chains-dQ">
-
-<div id="fig-chains">
+<img
+src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_21.svg"
+class="stretch" alt="|J|" />
 
 <img src="./assets/chains.svg" class="stretch"
 data-ref-parent="fig-chains-dQ" />
 
-
-(a) $\delta Q_{\mathrm{train}}$
-
-</div>
-
-
-Figure 14: Figure from [`l2hmc-qcd`
-Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html#inference)
-
-</div>
-
-### InferenceData
-
-<div id="fig-xeps">
-
 <img
 src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_30_68.svg"
 class="stretch" />
 
-
-Figure 15: $\varepsilon_{x}$ during training
-
-</div>
-<div id="fig-veps">
-
 <img
 src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_30_68.svg"
 class="stretch" />
-
-
-Figure 16: $\varepsilon_{x}$ during training
-
-</div>
-<div id="fig-combined-chains">
-
-<div id="fig-dQhist">
 
 <img
 src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_48_1.svg"
 class="stretch" data-ref-parent="fig-combined-chains" />
-
-
-(a) $\sum \delta Q$
-
-</div>
-
-
-Figure 17: Figure from [`l2hmc-qcd`
-Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html)
-
-</div>
 </details>
 <!-- ```{python} -->
 <!-- #| code-fold: true -->
@@ -456,7 +384,7 @@ Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html)
 >
 > <span style="text-align:center;">![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsaforem2.github.io%2Fambivalent&count_bg=%23222222&title_bg=%23303030&icon=&icon_color=%23E7E7E7)</span>
 >
-> <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f; font-style: italic">Last Updated</span>: <span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">05</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">13</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">2024</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">@</span> <span style="color: #1a8fff; text-decoration-color: #1a8fff; font-weight: bold">21:14:21</span>
+> <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f; font-style: italic">Last Updated</span>: <span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">05</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">13</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">2024</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">@</span> <span style="color: #1a8fff; text-decoration-color: #1a8fff; font-weight: bold">21:56:28</span>
 > </pre>
 
 [^1]: Examples from [Matplotlib
