@@ -193,10 +193,6 @@ window.Quarto = {
    
   <ul>
   <li><a href="#install" id="toc-install" class="nav-link active" data-scroll-target="#install">Install</a></li>
-  <li><a href="#galleryexamples" id="toc-galleryexamples" class="nav-link" data-scroll-target="#galleryexamples">Gallery</a>
-  <ul class="collapse">
-  <li><a href="#inferencedata" id="toc-inferencedata" class="nav-link" data-scroll-target="#inferencedata">InferenceData</a></li>
-  </ul></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a>
   <ul class="collapse">
@@ -206,8 +202,12 @@ window.Quarto = {
   <li><a href="#jointplot" id="toc-jointplot" class="nav-link" data-scroll-target="#jointplot">Jointplot</a></li>
   <li><a href="#matplotlib-histograms" id="toc-matplotlib-histograms" class="nav-link" data-scroll-target="#matplotlib-histograms">Matplotlib Histograms</a></li>
   </ul></li>
+  <li><a href="#galleryexamples" id="toc-galleryexamples" class="nav-link" data-scroll-target="#galleryexamples">Gallery</a>
+  <ul class="collapse">
+  <li><a href="#inferencedata" id="toc-inferencedata" class="nav-link" data-scroll-target="#inferencedata">InferenceData</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/saforem2/ambivalent/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/saforem2/ambivalent/edit/main/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/saforem2/ambivalent/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="ambivalent.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/saforem2/ambivalent/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/saforem2/ambivalent/edit/main/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/saforem2/ambivalent/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="README.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -243,22 +243,254 @@ window.Quarto = {
 </header>
 
 
-<!-- #  `ambivalent` 🤷🏻‍♂️  -->
-<p><a href="https://github.com/saforem2/opinionated"><del><code>opinionated</code></del></a> <span class="math inline">\longrightarrow</span> <a href="https://github.com/saforem2/ambivalent"><strong><code>ambivalent</code></strong></a></p>
+<p><a href="https://github.com/saforem2/opinionated"><del><code>opinionated</code></del></a> <span class="math inline">\longrightarrow</span> <a href="https://github.com/saforem2/ambivalent"><strong><code>ambivalent</code></strong></a> 🤷🏻‍</p>
 <p>Clean, simple style for Matplotlib figures.</p>
 <p>Transparent backgrounds with grey text <span class="math inline">\textcolor{#838383}{\blacksquare}</span> that are accessible / legible and <code>{light, dark}</code>-mode independent.</p>
 <section id="install" class="level2">
 <h2 class="anchored" data-anchor-id="install">Install</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">python3</span> <span class="at">-m</span> pip install ambivalent</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<!-- - Use `ambivalend.STYLES['ambivalent']` as the default style for `matplotlib`. -->
+<div id="a6f965c7" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> ambivalent</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3"></a>plt.style.use(ambivalent.STYLES[<span class="st">'ambivalent'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<section id="seaborn-tips-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="seaborn-tips-dataset"><code>seaborn</code> Tips Dataset</h3>
+<ul>
+<li><a href="https://seaborn.pydata.org/examples/index.html">Seaborn Gallery</a>
+<ul>
+<li><a href="https://seaborn.pydata.org/generated/seaborn.kdeplot.html">Tips Dataset Example</a></li>
+</ul></li>
+</ul>
+<!-- <details closed><summary><code>code</code>:</summary> -->
+<details class="code-fold">
+<summary><code>code</code>:</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a>tips.head()</span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))  <span class="co"># , ncols=2)</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a></span>
+<span id="cb3-8"><a href="#cb3-8"></a>_ <span class="op">=</span> sns.kdeplot(</span>
+<span id="cb3-9"><a href="#cb3-9"></a>   data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">"total_bill"</span>, hue<span class="op">=</span><span class="st">"size"</span>,</span>
+<span id="cb3-10"><a href="#cb3-10"></a>   fill<span class="op">=</span><span class="va">True</span>, common_norm<span class="op">=</span><span class="va">False</span>, palette<span class="op">=</span><span class="st">"flare_r"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11"></a>   alpha<span class="op">=</span><span class="fl">.3</span>, linewidth<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb3-12"><a href="#cb3-12"></a>   ax<span class="op">=</span>ax,  <span class="co"># [0],</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a>)</span>
+<span id="cb3-14"><a href="#cb3-14"></a>_ <span class="op">=</span> ax.set_ylabel(<span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="cell-fig-py-tips-density" class="cell quarto-layout-panel" data-execution_count="3" data-layout="[[100]]">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-py-tips-density" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-py-tips-density-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-py-tips-density-output-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-py-tips-density-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Tips – Density Plot
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<!-- </details> -->
+</section>
+<section id="seaborn-scatter-plot" class="level3">
+<h3 class="anchored" data-anchor-id="seaborn-scatter-plot"><code>seaborn</code> Scatter Plot</h3>
+<!-- <details closed><summary><code>code</code>:</summary> -->
+<details class="code-fold">
+<summary><code>code</code>:</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># Load the example diamonds dataset</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>diamonds <span class="op">=</span> sns.load_dataset(<span class="st">"diamonds"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co"># Draw a scatter plot while assigning point colors and sizes to different</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="co"># variables in the dataset</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>f, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
+<span id="cb4-10"><a href="#cb4-10"></a>_ <span class="op">=</span> sns.despine(f, left<span class="op">=</span><span class="va">True</span>, bottom<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-11"><a href="#cb4-11"></a>_ <span class="op">=</span> clarity_ranking <span class="op">=</span> [<span class="st">"I1"</span>, <span class="st">"SI2"</span>, <span class="st">"SI1"</span>, <span class="st">"VS2"</span>, <span class="st">"VS1"</span>, <span class="st">"VVS2"</span>, <span class="st">"VVS1"</span>, <span class="st">"IF"</span>]</span>
+<span id="cb4-12"><a href="#cb4-12"></a>_ <span class="op">=</span> sns.scatterplot(x<span class="op">=</span><span class="st">"carat"</span>, y<span class="op">=</span><span class="st">"price"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13"></a>                hue<span class="op">=</span><span class="st">"clarity"</span>, size<span class="op">=</span><span class="st">"depth"</span>,</span>
+<span id="cb4-14"><a href="#cb4-14"></a>                palette<span class="op">=</span><span class="st">"flare"</span>,</span>
+<span id="cb4-15"><a href="#cb4-15"></a>                hue_order<span class="op">=</span>clarity_ranking,</span>
+<span id="cb4-16"><a href="#cb4-16"></a>                sizes<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">8</span>), linewidth<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb4-17"><a href="#cb4-17"></a>                data<span class="op">=</span>diamonds, ax<span class="op">=</span>ax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="cell-fig-py-diamonds-scatter" class="cell quarto-layout-panel" data-execution_count="4" data-layout="[[100]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-py-diamonds-scatter" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-py-diamonds-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-py-diamonds-scatter-output-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-py-diamonds-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: scatter plot with markers of varying size and color
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<!-- </details> -->
+</section>
+<section id="histogram-scatter-plot" class="level3">
+<h3 class="anchored" data-anchor-id="histogram-scatter-plot">Histogram + Scatter Plot</h3>
+<!-- <details closed><summary><code>code</code>:</summary> -->
+<details class="code-fold">
+<summary><code>code</code>:</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co"># Simulate data from a bivariate Gaussian</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>n <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>mean <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>]</span>
+<span id="cb5-8"><a href="#cb5-8"></a>cov <span class="op">=</span> [(<span class="dv">2</span>, <span class="fl">.4</span>), (<span class="fl">.4</span>, <span class="fl">.2</span>)]</span>
+<span id="cb5-9"><a href="#cb5-9"></a>rng <span class="op">=</span> np.random.RandomState(<span class="dv">0</span>)</span>
+<span id="cb5-10"><a href="#cb5-10"></a>x, y <span class="op">=</span> rng.multivariate_normal(mean, cov, n).T</span>
+<span id="cb5-11"><a href="#cb5-11"></a></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="co"># Draw a combo histogram and scatterplot with density contours</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a>f, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
+<span id="cb5-14"><a href="#cb5-14"></a>_ <span class="op">=</span> sns.scatterplot(x<span class="op">=</span>x, y<span class="op">=</span>y, s<span class="op">=</span><span class="dv">5</span>, color<span class="op">=</span><span class="st">"#666666"</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb5-15"><a href="#cb5-15"></a>_ <span class="op">=</span> sns.histplot(x<span class="op">=</span>x, y<span class="op">=</span>y, bins<span class="op">=</span><span class="dv">50</span>, pthresh<span class="op">=</span><span class="fl">.1</span>, cmap<span class="op">=</span><span class="st">"flare_r"</span>)</span>
+<span id="cb5-16"><a href="#cb5-16"></a>_ <span class="op">=</span> sns.kdeplot(x<span class="op">=</span>x, y<span class="op">=</span>y, levels<span class="op">=</span><span class="dv">5</span>, color<span class="op">=</span><span class="st">"w"</span>, linewidths<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb5-17"><a href="#cb5-17"></a>_ <span class="op">=</span> ax.set_xlabel(<span class="st">'x'</span>)</span>
+<span id="cb5-18"><a href="#cb5-18"></a>_ <span class="op">=</span> ax.set_ylabel(<span class="st">'y'</span>)</span>
+<span id="cb5-19"><a href="#cb5-19"></a>_ <span class="op">=</span> plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="cell-fig-py-hist-scatter" class="cell quarto-layout-panel" data-execution_count="5" data-layout="[[100]]">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-py-hist-scatter" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-py-hist-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-py-hist-scatter-output-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-py-hist-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Combo histogram + Scatter Plot with Density Contours
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<!-- </details> -->
+</section>
+<section id="jointplot" class="level3">
+<h3 class="anchored" data-anchor-id="jointplot">Jointplot</h3>
+<!-- <details closed><summary><code>code</code>:</summary> -->
+<details class="code-fold">
+<summary><code>code</code>:</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="co"># Load the penguins dataset</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>penguins <span class="op">=</span> sns.load_dataset(<span class="st">"penguins"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># Show the joint distribution using kernel density estimation</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="cf">with</span> mpl.rc_context(plt.rcParams.update({<span class="st">'axes.grid'</span>: <span class="va">False</span>})):</span>
+<span id="cb6-7"><a href="#cb6-7"></a>  g <span class="op">=</span> sns.jointplot(</span>
+<span id="cb6-8"><a href="#cb6-8"></a>      data<span class="op">=</span>penguins,</span>
+<span id="cb6-9"><a href="#cb6-9"></a>      x<span class="op">=</span><span class="st">"bill_length_mm"</span>,</span>
+<span id="cb6-10"><a href="#cb6-10"></a>      y<span class="op">=</span><span class="st">"bill_depth_mm"</span>,</span>
+<span id="cb6-11"><a href="#cb6-11"></a>      hue<span class="op">=</span><span class="st">"species"</span>,</span>
+<span id="cb6-12"><a href="#cb6-12"></a>      edgecolors<span class="op">=</span><span class="st">'none'</span>,</span>
+<span id="cb6-13"><a href="#cb6-13"></a>      alpha<span class="op">=</span><span class="fl">0.4</span>,</span>
+<span id="cb6-14"><a href="#cb6-14"></a>  )</span>
+<span id="cb6-15"><a href="#cb6-15"></a>  _ <span class="op">=</span> plt.grid(<span class="va">False</span>)</span>
+<span id="cb6-16"><a href="#cb6-16"></a>  plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="cell-fig-py-kde-2d" class="cell quarto-layout-panel" data-execution_count="6" data-layout="[[100]]">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-py-kde-2d" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-py-kde-2d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-py-kde-2d-output-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-py-kde-2d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Joint Distribution with Kernel Density Estimation
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<!-- </details> -->
+</section>
+<section id="matplotlib-histograms" class="level3">
+<h3 class="anchored" data-anchor-id="matplotlib-histograms">Matplotlib Histograms</h3>
+<!-- <details closed><summary><code>code</code>:</summary> -->
+<details class="code-fold">
+<summary><code>code</code>:</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a>n_bins <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>x <span class="op">=</span> np.random.randn(<span class="dv">1000</span>, <span class="dv">3</span>)</span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a>plt.rcParams[<span class="st">'axes.grid'</span>] <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9"></a>fig, ((ax0, ax1), (ax2, ax3)) <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">2</span>, ncols<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb7-10"><a href="#cb7-10"></a></span>
+<span id="cb7-11"><a href="#cb7-11"></a>colors <span class="op">=</span> [<span class="st">'#333333'</span>, <span class="st">'#666666'</span>, <span class="st">'#999999'</span>]</span>
+<span id="cb7-12"><a href="#cb7-12"></a>ax0.hist(x, n_bins, density<span class="op">=</span><span class="va">True</span>, histtype<span class="op">=</span><span class="st">'bar'</span>, color<span class="op">=</span>colors, label<span class="op">=</span>colors)</span>
+<span id="cb7-13"><a href="#cb7-13"></a>_ <span class="op">=</span> ax0.legend()</span>
+<span id="cb7-14"><a href="#cb7-14"></a>_ <span class="op">=</span> ax0.set_title(<span class="st">'bars with legend'</span>)</span>
+<span id="cb7-15"><a href="#cb7-15"></a></span>
+<span id="cb7-16"><a href="#cb7-16"></a>_ <span class="op">=</span> ax1.hist(x, n_bins, density<span class="op">=</span><span class="va">True</span>, histtype<span class="op">=</span><span class="st">'bar'</span>, stacked<span class="op">=</span><span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.4</span>)</span>
+<span id="cb7-17"><a href="#cb7-17"></a>_ <span class="op">=</span> ax1.set_title(<span class="st">'stacked bar'</span>)</span>
+<span id="cb7-18"><a href="#cb7-18"></a></span>
+<span id="cb7-19"><a href="#cb7-19"></a>_ <span class="op">=</span> ax2.hist(x, n_bins, histtype<span class="op">=</span><span class="st">'step'</span>, stacked<span class="op">=</span><span class="va">True</span>, fill<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb7-20"><a href="#cb7-20"></a>_ <span class="op">=</span> ax2.set_title(<span class="st">'stack step (unfilled)'</span>)</span>
+<span id="cb7-21"><a href="#cb7-21"></a></span>
+<span id="cb7-22"><a href="#cb7-22"></a><span class="co"># Make a multiple-histogram of data-sets with different length.</span></span>
+<span id="cb7-23"><a href="#cb7-23"></a>x_multi <span class="op">=</span> [np.random.randn(n) <span class="cf">for</span> n <span class="kw">in</span> [<span class="dv">10000</span>, <span class="dv">5000</span>, <span class="dv">2000</span>]]</span>
+<span id="cb7-24"><a href="#cb7-24"></a>_ <span class="op">=</span> ax3.hist(x_multi, n_bins, histtype<span class="op">=</span><span class="st">'bar'</span>)</span>
+<span id="cb7-25"><a href="#cb7-25"></a>_ <span class="op">=</span> ax3.set_title(<span class="st">'different sample sizes'</span>)</span>
+<span id="cb7-26"><a href="#cb7-26"></a></span>
+<span id="cb7-27"><a href="#cb7-27"></a>_ <span class="op">=</span> fig.tight_layout()</span>
+<span id="cb7-28"><a href="#cb7-28"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="cell-fig-py-mpl-hists" class="cell quarto-layout-panel" data-execution_count="7" data-layout="[[100]]">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-py-mpl-hists" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-py-mpl-hists-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-py-mpl-hists-output-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-py-mpl-hists-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Histograms with Matplotlib
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<!-- </details> -->
+</section>
+</section>
 <section id="galleryexamples" class="level2">
 <h2 class="anchored" data-anchor-id="galleryexamples">Gallery<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
-<div class="flex" style="flex-direction:row;">
+<!-- ::: {#fig-gallery style="display: flex; flex-direction:row; align-items: flex-end"} -->
+<div data-layout-nrow="3">
 <div>
 
 </div>
-<div class="quarto-layout-panel" style="display: flex; text-align:center; align-items: flex-end;" data-layout="[[40, 40]]">
-<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-penguins" class="stretch quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -266,7 +498,7 @@ window.Quarto = {
 <img src="./assets/penguins.svg" class="stretch img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: <a href="https://seaborn.pydata.org/generated/seaborn.jointplot.html#seaborn.jointplot"><code>seaborn.jointplot</code></a>
+Figure&nbsp;6: <a href="https://seaborn.pydata.org/generated/seaborn.jointplot.html#seaborn.jointplot"><code>seaborn.jointplot</code></a>
 </figcaption>
 </figure>
 </div>
@@ -278,18 +510,19 @@ Figure&nbsp;1: <a href="https://seaborn.pydata.org/generated/seaborn.jointplot.h
 <img src="./assets/spectrum.svg" class="stretch img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: <a href="https://matplotlib.org/stable/gallery/lines_bars_and_markers/spectrum_demo.html#sphx-glr-gallery-lines-bars-and-markers-spectrum-demo-py">spectrum</a>
+Figure&nbsp;7: <a href="https://matplotlib.org/stable/gallery/lines_bars_and_markers/spectrum_demo.html#sphx-glr-gallery-lines-bars-and-markers-spectrum-demo-py">spectrum</a>
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
+<!-- ::: {layout="[[45, 45]]" layout-valign="bottom" style="text-align:center;"} -->
 <div>
 
 </div>
-<div class="quarto-layout-panel" style="display: flex; text-align:center; align-items: flex-end;" data-layout="[[40, 40]]">
-<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-tips-kde" class="stretch quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -297,7 +530,7 @@ Figure&nbsp;2: <a href="https://matplotlib.org/stable/gallery/lines_bars_and_mar
 <img src="./assets/tipde-kde_r.svg" class="stretch img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tips-kde-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: <code>tips</code> dataset
+Figure&nbsp;8: <code>tips</code> dataset
 </figcaption>
 </figure>
 </div>
@@ -309,17 +542,18 @@ Figure&nbsp;3: <code>tips</code> dataset
 <img src="./assets/kde-2d_r.svg" class="stretch img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2d-kde-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: 2D KDE
+Figure&nbsp;9: 2D KDE
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
+<!-- ::: {layout="[[80]]" style="display: flex; text-align:center;"} -->
 <div>
 
 </div>
-<div class="quarto-layout-panel" style="display: flex; text-align:center;" data-layout="[[80]]">
+<div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div id="fig-mpl-hist" class="stretch quarto-float quarto-figure quarto-figure-center anchored">
@@ -328,7 +562,7 @@ Figure&nbsp;4: 2D KDE
 <img src="./assets/mpl-hist.svg" class="stretch img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mpl-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Histograms
+Figure&nbsp;10: Histograms
 </figcaption>
 </figure>
 </div>
@@ -343,7 +577,7 @@ Figure&nbsp;5: Histograms
 <div>
 
 </div>
-<div class="stretch quarto-layout-panel" style="display: flex; text-align:center!important;" data-layout="[[31, 31, 31]]">
+<div class="stretch quarto-layout-panel" data-layout="[[31, 31, 31]]" style="display: flex; text-align:center!important;">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div id="fig-ridgeplot1" class="stretch quarto-float quarto-figure quarto-figure-center anchored">
@@ -352,7 +586,7 @@ Figure&nbsp;5: Histograms
 <img src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_22.svg" class="stretch img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ridgeplot1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: <span class="math inline">|J_{f}|</span>
+Figure&nbsp;11: <span class="math inline">|J_{f}|</span>
 </figcaption>
 </figure>
 </div>
@@ -364,7 +598,7 @@ Figure&nbsp;6: <span class="math inline">|J_{f}|</span>
 <img src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_23.svg" class="stretch img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ridgeplot2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: <span class="math inline">|J_{b}|</span>
+Figure&nbsp;12: <span class="math inline">|J_{b}|</span>
 </figcaption>
 </figure>
 </div>
@@ -376,7 +610,7 @@ Figure&nbsp;7: <span class="math inline">|J_{b}|</span>
 <img src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_21.svg" class="stretch img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ridgeplot3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: <span class="math inline">|J|</span>
+Figure&nbsp;13: <span class="math inline">|J|</span>
 </figcaption>
 </figure>
 </div>
@@ -402,7 +636,7 @@ Figure&nbsp;8: <span class="math inline">|J|</span>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chains-dQ-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Figure from <a href="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html#inference"><code>l2hmc-qcd</code> Notebook</a>
+Figure&nbsp;14: Figure from <a href="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html#inference"><code>l2hmc-qcd</code> Notebook</a>
 </figcaption>
 </figure>
 </div>
@@ -414,7 +648,7 @@ Figure&nbsp;9: Figure from <a href="https://saforem2.github.io/l2hmc-qcd/qmd/l2h
 <img src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_30_68.svg" class="stretch img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-xeps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: <span class="math inline">\varepsilon_{x}</span> during training
+Figure&nbsp;15: <span class="math inline">\varepsilon_{x}</span> during training
 </figcaption>
 </figure>
 </div>
@@ -424,7 +658,7 @@ Figure&nbsp;10: <span class="math inline">\varepsilon_{x}</span> during training
 <img src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_30_68.svg" class="stretch img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-veps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: <span class="math inline">\varepsilon_{x}</span> during training
+Figure&nbsp;16: <span class="math inline">\varepsilon_{x}</span> during training
 </figcaption>
 </figure>
 </div>
@@ -447,248 +681,11 @@ Figure&nbsp;11: <span class="math inline">\varepsilon_{x}</span> during training
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-combined-chains-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12: Figure from <a href="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html"><code>l2hmc-qcd</code> Notebook</a>
+Figure&nbsp;17: Figure from <a href="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html"><code>l2hmc-qcd</code> Notebook</a>
 </figcaption>
 </figure>
 </div>
 </section></details>
-</section>
-
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<!-- - Use `ambivalend.STYLES['ambivalent']` as the default style for `matplotlib`. -->
-<div id="e2148c99" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> ambivalent</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-3"><a href="#cb2-3"></a>plt.style.use(ambivalent.STYLES[<span class="st">'ambivalent'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Failed to download font: IBM Plex Sans, skipping!
-Failed to download font: IBM Plex Sans Condensed, skipping!
-Failed to download font: IBM Plex Serif, skipping!</code></pre>
-</div>
-</div>
-</section>
-<section id="examples" class="level2">
-<h2 class="anchored" data-anchor-id="examples">Examples</h2>
-<section id="seaborn-tips-dataset" class="level3">
-<h3 class="anchored" data-anchor-id="seaborn-tips-dataset"><code>seaborn</code> Tips Dataset</h3>
-<ul>
-<li><a href="https://seaborn.pydata.org/examples/index.html">Seaborn Gallery</a>
-<ul>
-<li><a href="https://seaborn.pydata.org/generated/seaborn.kdeplot.html">Tips Dataset Example</a></li>
-</ul></li>
-</ul>
-<!-- <details closed><summary><code>code</code>:</summary> -->
-<details class="code-fold">
-<summary><code>code</code>:</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
-<span id="cb4-4"><a href="#cb4-4"></a>tips.head()</span>
-<span id="cb4-5"><a href="#cb4-5"></a></span>
-<span id="cb4-6"><a href="#cb4-6"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))  <span class="co"># , ncols=2)</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a></span>
-<span id="cb4-8"><a href="#cb4-8"></a>_ <span class="op">=</span> sns.kdeplot(</span>
-<span id="cb4-9"><a href="#cb4-9"></a>   data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">"total_bill"</span>, hue<span class="op">=</span><span class="st">"size"</span>,</span>
-<span id="cb4-10"><a href="#cb4-10"></a>   fill<span class="op">=</span><span class="va">True</span>, common_norm<span class="op">=</span><span class="va">False</span>, palette<span class="op">=</span><span class="st">"flare_r"</span>,</span>
-<span id="cb4-11"><a href="#cb4-11"></a>   alpha<span class="op">=</span><span class="fl">.3</span>, linewidth<span class="op">=</span><span class="dv">0</span>,</span>
-<span id="cb4-12"><a href="#cb4-12"></a>   ax<span class="op">=</span>ax,  <span class="co"># [0],</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a>)</span>
-<span id="cb4-14"><a href="#cb4-14"></a>_ <span class="op">=</span> ax.set_ylabel(<span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div id="cell-fig-py-tips-density" class="cell quarto-layout-panel" data-execution_count="3" data-layout="[[100]]">
-<div class="quarto-layout-row">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div id="fig-py-tips-density" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-py-tips-density-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-py-tips-density-output-1.svg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-py-tips-density-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13: Tips – Density Plot
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<!-- </details> -->
-</section>
-<section id="seaborn-scatter-plot" class="level3">
-<h3 class="anchored" data-anchor-id="seaborn-scatter-plot"><code>seaborn</code> Scatter Plot</h3>
-<!-- <details closed><summary><code>code</code>:</summary> -->
-<details class="code-fold">
-<summary><code>code</code>:</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># Load the example diamonds dataset</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>diamonds <span class="op">=</span> sns.load_dataset(<span class="st">"diamonds"</span>)</span>
-<span id="cb5-6"><a href="#cb5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># Draw a scatter plot while assigning point colors and sizes to different</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="co"># variables in the dataset</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a>f, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
-<span id="cb5-10"><a href="#cb5-10"></a>_ <span class="op">=</span> sns.despine(f, left<span class="op">=</span><span class="va">True</span>, bottom<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb5-11"><a href="#cb5-11"></a>_ <span class="op">=</span> clarity_ranking <span class="op">=</span> [<span class="st">"I1"</span>, <span class="st">"SI2"</span>, <span class="st">"SI1"</span>, <span class="st">"VS2"</span>, <span class="st">"VS1"</span>, <span class="st">"VVS2"</span>, <span class="st">"VVS1"</span>, <span class="st">"IF"</span>]</span>
-<span id="cb5-12"><a href="#cb5-12"></a>_ <span class="op">=</span> sns.scatterplot(x<span class="op">=</span><span class="st">"carat"</span>, y<span class="op">=</span><span class="st">"price"</span>,</span>
-<span id="cb5-13"><a href="#cb5-13"></a>                hue<span class="op">=</span><span class="st">"clarity"</span>, size<span class="op">=</span><span class="st">"depth"</span>,</span>
-<span id="cb5-14"><a href="#cb5-14"></a>                palette<span class="op">=</span><span class="st">"flare"</span>,</span>
-<span id="cb5-15"><a href="#cb5-15"></a>                hue_order<span class="op">=</span>clarity_ranking,</span>
-<span id="cb5-16"><a href="#cb5-16"></a>                sizes<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">8</span>), linewidth<span class="op">=</span><span class="dv">0</span>,</span>
-<span id="cb5-17"><a href="#cb5-17"></a>                data<span class="op">=</span>diamonds, ax<span class="op">=</span>ax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div id="cell-fig-py-diamonds-scatter" class="cell quarto-layout-panel" data-execution_count="4" data-layout="[[100]]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div id="fig-py-diamonds-scatter" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-py-diamonds-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-py-diamonds-scatter-output-1.svg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-py-diamonds-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14: scatter plot with markers of varying size and color
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<!-- </details> -->
-</section>
-<section id="histogram-scatter-plot" class="level3">
-<h3 class="anchored" data-anchor-id="histogram-scatter-plot">Histogram + Scatter Plot</h3>
-<!-- <details closed><summary><code>code</code>:</summary> -->
-<details class="code-fold">
-<summary><code>code</code>:</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb6-4"><a href="#cb6-4"></a></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="co"># Simulate data from a bivariate Gaussian</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a>n <span class="op">=</span> <span class="dv">10000</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>mean <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>]</span>
-<span id="cb6-8"><a href="#cb6-8"></a>cov <span class="op">=</span> [(<span class="dv">2</span>, <span class="fl">.4</span>), (<span class="fl">.4</span>, <span class="fl">.2</span>)]</span>
-<span id="cb6-9"><a href="#cb6-9"></a>rng <span class="op">=</span> np.random.RandomState(<span class="dv">0</span>)</span>
-<span id="cb6-10"><a href="#cb6-10"></a>x, y <span class="op">=</span> rng.multivariate_normal(mean, cov, n).T</span>
-<span id="cb6-11"><a href="#cb6-11"></a></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="co"># Draw a combo histogram and scatterplot with density contours</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a>f, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
-<span id="cb6-14"><a href="#cb6-14"></a>_ <span class="op">=</span> sns.scatterplot(x<span class="op">=</span>x, y<span class="op">=</span>y, s<span class="op">=</span><span class="dv">5</span>, color<span class="op">=</span><span class="st">"#666666"</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb6-15"><a href="#cb6-15"></a>_ <span class="op">=</span> sns.histplot(x<span class="op">=</span>x, y<span class="op">=</span>y, bins<span class="op">=</span><span class="dv">50</span>, pthresh<span class="op">=</span><span class="fl">.1</span>, cmap<span class="op">=</span><span class="st">"flare_r"</span>)</span>
-<span id="cb6-16"><a href="#cb6-16"></a>_ <span class="op">=</span> sns.kdeplot(x<span class="op">=</span>x, y<span class="op">=</span>y, levels<span class="op">=</span><span class="dv">5</span>, color<span class="op">=</span><span class="st">"w"</span>, linewidths<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb6-17"><a href="#cb6-17"></a>_ <span class="op">=</span> ax.set_xlabel(<span class="st">'x'</span>)</span>
-<span id="cb6-18"><a href="#cb6-18"></a>_ <span class="op">=</span> ax.set_ylabel(<span class="st">'y'</span>)</span>
-<span id="cb6-19"><a href="#cb6-19"></a>_ <span class="op">=</span> plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div id="cell-fig-py-hist-scatter" class="cell quarto-layout-panel" data-execution_count="5" data-layout="[[100]]">
-<div class="quarto-layout-row">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div id="fig-py-hist-scatter" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-py-hist-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-py-hist-scatter-output-1.svg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-py-hist-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;15: Combo histogram + Scatter Plot with Density Contours
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<!-- </details> -->
-</section>
-<section id="jointplot" class="level3">
-<h3 class="anchored" data-anchor-id="jointplot">Jointplot</h3>
-<!-- <details closed><summary><code>code</code>:</summary> -->
-<details class="code-fold">
-<summary><code>code</code>:</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="co"># Load the penguins dataset</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a>penguins <span class="op">=</span> sns.load_dataset(<span class="st">"penguins"</span>)</span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># Show the joint distribution using kernel density estimation</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="cf">with</span> mpl.rc_context(plt.rcParams.update({<span class="st">'axes.grid'</span>: <span class="va">False</span>})):</span>
-<span id="cb7-7"><a href="#cb7-7"></a>  g <span class="op">=</span> sns.jointplot(</span>
-<span id="cb7-8"><a href="#cb7-8"></a>      data<span class="op">=</span>penguins,</span>
-<span id="cb7-9"><a href="#cb7-9"></a>      x<span class="op">=</span><span class="st">"bill_length_mm"</span>,</span>
-<span id="cb7-10"><a href="#cb7-10"></a>      y<span class="op">=</span><span class="st">"bill_depth_mm"</span>,</span>
-<span id="cb7-11"><a href="#cb7-11"></a>      hue<span class="op">=</span><span class="st">"species"</span>,</span>
-<span id="cb7-12"><a href="#cb7-12"></a>      edgecolors<span class="op">=</span><span class="st">'none'</span>,</span>
-<span id="cb7-13"><a href="#cb7-13"></a>      alpha<span class="op">=</span><span class="fl">0.4</span>,</span>
-<span id="cb7-14"><a href="#cb7-14"></a>  )</span>
-<span id="cb7-15"><a href="#cb7-15"></a>  _ <span class="op">=</span> plt.grid(<span class="va">False</span>)</span>
-<span id="cb7-16"><a href="#cb7-16"></a>  plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div id="cell-fig-py-kde-2d" class="cell quarto-layout-panel" data-execution_count="6" data-layout="[[100]]">
-<div class="quarto-layout-row">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div id="fig-py-kde-2d" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-py-kde-2d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-py-kde-2d-output-1.svg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-py-kde-2d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16: Joint Distribution with Kernel Density Estimation
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<!-- </details> -->
-</section>
-<section id="matplotlib-histograms" class="level3">
-<h3 class="anchored" data-anchor-id="matplotlib-histograms">Matplotlib Histograms</h3>
-<!-- <details closed><summary><code>code</code>:</summary> -->
-<details class="code-fold">
-<summary><code>code</code>:</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a>n_bins <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>x <span class="op">=</span> np.random.randn(<span class="dv">1000</span>, <span class="dv">3</span>)</span>
-<span id="cb8-6"><a href="#cb8-6"></a></span>
-<span id="cb8-7"><a href="#cb8-7"></a>plt.rcParams[<span class="st">'axes.grid'</span>] <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a></span>
-<span id="cb8-9"><a href="#cb8-9"></a>fig, ((ax0, ax1), (ax2, ax3)) <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">2</span>, ncols<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb8-10"><a href="#cb8-10"></a></span>
-<span id="cb8-11"><a href="#cb8-11"></a>colors <span class="op">=</span> [<span class="st">'#333333'</span>, <span class="st">'#666666'</span>, <span class="st">'#999999'</span>]</span>
-<span id="cb8-12"><a href="#cb8-12"></a>ax0.hist(x, n_bins, density<span class="op">=</span><span class="va">True</span>, histtype<span class="op">=</span><span class="st">'bar'</span>, color<span class="op">=</span>colors, label<span class="op">=</span>colors)</span>
-<span id="cb8-13"><a href="#cb8-13"></a>_ <span class="op">=</span> ax0.legend()</span>
-<span id="cb8-14"><a href="#cb8-14"></a>_ <span class="op">=</span> ax0.set_title(<span class="st">'bars with legend'</span>)</span>
-<span id="cb8-15"><a href="#cb8-15"></a></span>
-<span id="cb8-16"><a href="#cb8-16"></a>_ <span class="op">=</span> ax1.hist(x, n_bins, density<span class="op">=</span><span class="va">True</span>, histtype<span class="op">=</span><span class="st">'bar'</span>, stacked<span class="op">=</span><span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.4</span>)</span>
-<span id="cb8-17"><a href="#cb8-17"></a>_ <span class="op">=</span> ax1.set_title(<span class="st">'stacked bar'</span>)</span>
-<span id="cb8-18"><a href="#cb8-18"></a></span>
-<span id="cb8-19"><a href="#cb8-19"></a>_ <span class="op">=</span> ax2.hist(x, n_bins, histtype<span class="op">=</span><span class="st">'step'</span>, stacked<span class="op">=</span><span class="va">True</span>, fill<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb8-20"><a href="#cb8-20"></a>_ <span class="op">=</span> ax2.set_title(<span class="st">'stack step (unfilled)'</span>)</span>
-<span id="cb8-21"><a href="#cb8-21"></a></span>
-<span id="cb8-22"><a href="#cb8-22"></a><span class="co"># Make a multiple-histogram of data-sets with different length.</span></span>
-<span id="cb8-23"><a href="#cb8-23"></a>x_multi <span class="op">=</span> [np.random.randn(n) <span class="cf">for</span> n <span class="kw">in</span> [<span class="dv">10000</span>, <span class="dv">5000</span>, <span class="dv">2000</span>]]</span>
-<span id="cb8-24"><a href="#cb8-24"></a>_ <span class="op">=</span> ax3.hist(x_multi, n_bins, histtype<span class="op">=</span><span class="st">'bar'</span>)</span>
-<span id="cb8-25"><a href="#cb8-25"></a>_ <span class="op">=</span> ax3.set_title(<span class="st">'different sample sizes'</span>)</span>
-<span id="cb8-26"><a href="#cb8-26"></a></span>
-<span id="cb8-27"><a href="#cb8-27"></a>_ <span class="op">=</span> fig.tight_layout()</span>
-<span id="cb8-28"><a href="#cb8-28"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div id="cell-fig-py-mpl-hists" class="cell quarto-layout-panel" data-execution_count="7" data-layout="[[100]]">
-<div class="quarto-layout-row">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div id="fig-py-mpl-hists" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-py-mpl-hists-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-py-mpl-hists-output-1.svg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-py-mpl-hists-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;17: Histograms with Matplotlib
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<!-- </details> -->
 <!-- ```{python} -->
 <!-- #| code-fold: true -->
 <!-- #| code-summary: "boxenplot" -->
@@ -831,9 +828,9 @@ Figure&nbsp;17: Histograms with Matplotlib
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p><span style="text-align:center;"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsaforem2.github.io%2Fambivalent&amp;count_bg=%23222222&amp;title_bg=%23303030&amp;icon=&amp;icon_color=%23E7E7E7" class="img-fluid"></span></p>
-<div id="8c14b959" class="cell" data-execution_count="8">
+<div id="d9358c4d" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f; font-style: italic">Last Updated</span>: <span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">05</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">13</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">2024</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">@</span> <span style="color: #1a8fff; text-decoration-color: #1a8fff; font-weight: bold">20:29:30</span>
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f; font-style: italic">Last Updated</span>: <span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">05</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">13</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">2024</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">@</span> <span style="color: #1a8fff; text-decoration-color: #1a8fff; font-weight: bold">21:14:11</span>
 </pre>
 </div>
 </div>
@@ -843,7 +840,7 @@ Figure&nbsp;17: Histograms with Matplotlib
 
 
 </section>
-</section>
+
 
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>

@@ -2,11 +2,9 @@
 Sam Foreman
 2024-05-13
 
-<!-- #  `ambivalent` 🤷🏻‍♂️  -->
-
 [~~`opinionated`~~](https://github.com/saforem2/opinionated)
 $\longrightarrow$
-[**`ambivalent`**](https://github.com/saforem2/ambivalent)
+[**`ambivalent`**](https://github.com/saforem2/ambivalent) 🤷🏻‍
 
 Clean, simple style for Matplotlib figures.
 
@@ -19,93 +17,6 @@ $\textcolor{#838383}{\blacksquare}$ that are accessible / legible and
 ``` bash
 python3 -m pip install ambivalent
 ```
-
-## Gallery[^1]
-
-<div class="flex" style="flex-direction:row;">
-
-<div>
-
-</div>
-
-<div>
-
-</div>
-
-<div>
-
-</div>
-
-</div>
-
-<details closed>
-<summary>
-<italic>More Examples…</italic>
-</summary>
-
-<div>
-
-</div>
-
-<div id="fig-chains-dQ">
-
-<div id="fig-chains">
-
-<img src="./assets/chains.svg" class="stretch"
-data-ref-parent="fig-chains-dQ" />
-
-
-(a) $\delta Q_{\mathrm{train}}$
-
-</div>
-
-
-Figure 9: Figure from [`l2hmc-qcd`
-Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html#inference)
-
-</div>
-
-### InferenceData
-
-<div id="fig-xeps">
-
-<img
-src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_30_68.svg"
-class="stretch" />
-
-
-Figure 10: $\varepsilon_{x}$ during training
-
-</div>
-<div id="fig-veps">
-
-<img
-src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_30_68.svg"
-class="stretch" />
-
-
-Figure 11: $\varepsilon_{x}$ during training
-
-</div>
-<div id="fig-combined-chains">
-
-<div id="fig-dQhist">
-
-<img
-src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_48_1.svg"
-class="stretch" data-ref-parent="fig-combined-chains" />
-
-
-(a) $\sum \delta Q$
-
-</div>
-
-
-Figure 12: Figure from [`l2hmc-qcd`
-Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html)
-
-</div>
-</details>
 
 ## Getting Started
 
@@ -152,7 +63,7 @@ _ = ax.set_ylabel('')
 ![](index_files/figure-commonmark/fig-py-tips-density-output-1.svg)
 
 
-Figure 13: Tips – Density Plot
+Figure 1: Tips – Density Plot
 
 </div>
 <!-- </details> -->
@@ -189,7 +100,7 @@ _ = sns.scatterplot(x="carat", y="price",
 ![](index_files/figure-commonmark/fig-py-diamonds-scatter-output-1.svg)
 
 
-Figure 14: scatter plot with markers of varying size and color
+Figure 2: scatter plot with markers of varying size and color
 
 </div>
 <!-- </details> -->
@@ -228,7 +139,7 @@ _ = plt.show()
 ![](index_files/figure-commonmark/fig-py-hist-scatter-output-1.svg)
 
 
-Figure 15: Combo histogram + Scatter Plot with Density Contours
+Figure 3: Combo histogram + Scatter Plot with Density Contours
 
 </div>
 <!-- </details> -->
@@ -264,7 +175,7 @@ with mpl.rc_context(plt.rcParams.update({'axes.grid': False})):
 ![](index_files/figure-commonmark/fig-py-kde-2d-output-1.svg)
 
 
-Figure 16: Joint Distribution with Kernel Density Estimation
+Figure 4: Joint Distribution with Kernel Density Estimation
 
 </div>
 <!-- </details> -->
@@ -312,10 +223,103 @@ plt.show()
 ![](index_files/figure-commonmark/fig-py-mpl-hists-output-1.svg)
 
 
-Figure 17: Histograms with Matplotlib
+Figure 5: Histograms with Matplotlib
 
 </div>
 <!-- </details> -->
+
+## Gallery[^1]
+
+<!-- ::: {#fig-gallery style="display: flex; flex-direction:row; align-items: flex-end"} -->
+
+<div layout-nrow="3">
+
+<div>
+
+</div>
+
+<!-- ::: {layout="[[45, 45]]" layout-valign="bottom" style="text-align:center;"} -->
+
+<div>
+
+</div>
+
+<!-- ::: {layout="[[80]]" style="display: flex; text-align:center;"} -->
+
+<div>
+
+</div>
+
+</div>
+
+<details closed>
+<summary>
+<italic>More Examples…</italic>
+</summary>
+
+<div>
+
+</div>
+
+<div id="fig-chains-dQ">
+
+<div id="fig-chains">
+
+<img src="./assets/chains.svg" class="stretch"
+data-ref-parent="fig-chains-dQ" />
+
+
+(a) $\delta Q_{\mathrm{train}}$
+
+</div>
+
+
+Figure 14: Figure from [`l2hmc-qcd`
+Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html#inference)
+
+</div>
+
+### InferenceData
+
+<div id="fig-xeps">
+
+<img
+src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_30_68.svg"
+class="stretch" />
+
+
+Figure 15: $\varepsilon_{x}$ during training
+
+</div>
+<div id="fig-veps">
+
+<img
+src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_30_68.svg"
+class="stretch" />
+
+
+Figure 16: $\varepsilon_{x}$ during training
+
+</div>
+<div id="fig-combined-chains">
+
+<div id="fig-dQhist">
+
+<img
+src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_48_1.svg"
+class="stretch" data-ref-parent="fig-combined-chains" />
+
+
+(a) $\sum \delta Q$
+
+</div>
+
+
+Figure 17: Figure from [`l2hmc-qcd`
+Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html)
+
+</div>
+</details>
 <!-- ```{python} -->
 <!-- #| code-fold: true -->
 <!-- #| code-summary: "boxenplot" -->
@@ -452,7 +456,7 @@ Figure 17: Histograms with Matplotlib
 >
 > <span style="text-align:center;">![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsaforem2.github.io%2Fambivalent&count_bg=%23222222&title_bg=%23303030&icon=&icon_color=%23E7E7E7)</span>
 >
-> <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f; font-style: italic">Last Updated</span>: <span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">05</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">13</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">2024</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">@</span> <span style="color: #1a8fff; text-decoration-color: #1a8fff; font-weight: bold">20:30:03</span>
+> <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f; font-style: italic">Last Updated</span>: <span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">05</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">13</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">2024</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">@</span> <span style="color: #1a8fff; text-decoration-color: #1a8fff; font-weight: bold">21:14:21</span>
 > </pre>
 
 [^1]: Examples from [Matplotlib

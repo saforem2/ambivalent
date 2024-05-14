@@ -11,13 +11,10 @@ format:
   gfm:
     default-image-extension: svg
     author: Sam Foreman
-    output-file: "ambivalent.md"
+    output-file: "README.md"
 ---
 
-
-<!-- #  `ambivalent` 🤷🏻‍♂️  -->
-
-[~~`opinionated`~~](https://github.com/saforem2/opinionated) $\longrightarrow$ [**`ambivalent`**](https://github.com/saforem2/ambivalent)
+[~~`opinionated`~~](https://github.com/saforem2/opinionated) $\longrightarrow$ [**`ambivalent`**](https://github.com/saforem2/ambivalent) 🤷🏻‍
 
 Clean, simple style for Matplotlib figures.
 
@@ -29,86 +26,6 @@ are accessible / legible and `{light, dark}`-mode independent.
 ```bash
 python3 -m pip install ambivalent
 ```
-
-## Gallery[^examples]
-
-[^examples]: Examples from [Matplotlib Examples](https://matplotlib.org/stable/gallery/index.html)
-
-::: {.flex style="flex-direction:row;"}
-
-::: {layout="[[40, 40]]" layout-valign="bottom" style="display: flex; text-align:center; align-items: flex-end;"}
-
-![[`seaborn.jointplot`](https://seaborn.pydata.org/generated/seaborn.jointplot.html#seaborn.jointplot)](./assets/penguins.svg){#fig-penguins .stretch}
-
-![[spectrum](https://matplotlib.org/stable/gallery/lines_bars_and_markers/spectrum_demo.html#sphx-glr-gallery-lines-bars-and-markers-spectrum-demo-py)](./assets/spectrum.svg){#fig-spectrum .stretch}
-
-:::
-
-
-::: {layout="[[40, 40]]" layout-valign="bottom" style="display: flex; text-align:center; align-items: flex-end;"}
-
-![`tips` dataset](./assets/tipde-kde_r.svg){#fig-tips-kde .stretch}
-
-![2D KDE](./assets/kde-2d_r.svg){#fig-2d-kde .stretch}
-
-:::
-
-::: {layout="[[80]]" style="display: flex; text-align:center;"}
-
-![Histograms](./assets/mpl-hist.svg){#fig-mpl-hist .stretch}
-
-:::
-
-:::
-
-<details closed><summary><italic>More Examples...</italic></summary>
-
-::: {.stretch layout="[[31, 31, 31]]" layout-valign="bottom" style="display: flex; text-align:center!important;"}
-
-![$|J_{f}|$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_22.svg){#fig-ridgeplot1 .stretch}
-
-![$|J_{b}|$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_23.svg){#fig-ridgeplot2 .stretch}
-
-![$|J|$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_21.svg){#fig-ridgeplot3 .stretch}
-
-:::
-
-::: {#fig-chains-dQ layout="[[80]]" layout-valign="bottom" style="display: flex; text-align:center;"}
-
-![$\delta Q_{\mathrm{train}}$](./assets/chains.svg){#fig-chains .stretch}
-
-Figure from [`l2hmc-qcd` Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html#inference)
-
-:::
-
-### InferenceData
-
-::: {#fig-xeps style="display: flex; text-align:center;"}
-
-![](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_30_68.svg){.stretch}
-
-$\varepsilon_{x}$ during training
-
-:::
-
-::: {#fig-veps style="display: flex; text-align:center;"}
-
-![](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_30_68.svg){.stretch}
-
-$\varepsilon_{x}$ during training
-
-:::
-
-::: {#fig-combined-chains layout="[[80]]" style="display: flex; text-align:center;"}
-
-
-![$\sum \delta Q$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_48_1.svg){#fig-dQhist .stretch}
-
-Figure from [`l2hmc-qcd` Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html)
-
-:::
-
-</details>
 
 ## Getting Started
 
@@ -305,6 +222,91 @@ plt.show()
 ```
 
 <!-- </details> -->
+
+## Gallery[^examples]
+
+[^examples]: Examples from [Matplotlib Examples](https://matplotlib.org/stable/gallery/index.html)
+
+
+<!-- ::: {#fig-gallery style="display: flex; flex-direction:row; align-items: flex-end"} -->
+
+::: {layout-nrow=3}
+
+::: {layout-ncol=2}
+
+![[`seaborn.jointplot`](https://seaborn.pydata.org/generated/seaborn.jointplot.html#seaborn.jointplot)](./assets/penguins.svg){#fig-penguins .stretch}
+
+![[spectrum](https://matplotlib.org/stable/gallery/lines_bars_and_markers/spectrum_demo.html#sphx-glr-gallery-lines-bars-and-markers-spectrum-demo-py)](./assets/spectrum.svg){#fig-spectrum .stretch}
+
+:::
+
+<!-- ::: {layout="[[45, 45]]" layout-valign="bottom" style="text-align:center;"} -->
+::: {layout-ncol=2}
+
+![`tips` dataset](./assets/tipde-kde_r.svg){#fig-tips-kde .stretch}
+
+![2D KDE](./assets/kde-2d_r.svg){#fig-2d-kde .stretch}
+
+:::
+
+<!-- ::: {layout="[[80]]" style="display: flex; text-align:center;"} -->
+::: {layout-ncol=1}
+
+![Histograms](./assets/mpl-hist.svg){#fig-mpl-hist .stretch}
+
+:::
+
+:::
+
+<details closed><summary><italic>More Examples...</italic></summary>
+
+::: {.stretch layout="[[31, 31, 31]]" layout-valign="bottom" style="display: flex; text-align:center!important;"}
+
+![$|J_{f}|$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_22.svg){#fig-ridgeplot1 .stretch}
+
+![$|J_{b}|$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_23.svg){#fig-ridgeplot2 .stretch}
+
+![$|J|$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_21.svg){#fig-ridgeplot3 .stretch}
+
+:::
+
+::: {#fig-chains-dQ layout="[[80]]" layout-valign="bottom" style="display: flex; text-align:center;"}
+
+![$\delta Q_{\mathrm{train}}$](./assets/chains.svg){#fig-chains .stretch}
+
+Figure from [`l2hmc-qcd` Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html#inference)
+
+:::
+
+### InferenceData
+
+::: {#fig-xeps style="display: flex; text-align:center;"}
+
+![](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_30_68.svg){.stretch}
+
+$\varepsilon_{x}$ during training
+
+:::
+
+::: {#fig-veps style="display: flex; text-align:center;"}
+
+![](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_30_68.svg){.stretch}
+
+$\varepsilon_{x}$ during training
+
+:::
+
+::: {#fig-combined-chains layout="[[80]]" style="display: flex; text-align:center;"}
+
+
+![$\sum \delta Q$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_48_1.svg){#fig-dQhist .stretch}
+
+Figure from [`l2hmc-qcd` Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html)
+
+:::
+
+</details>
+
 
 
 <!-- ```{python} -->
