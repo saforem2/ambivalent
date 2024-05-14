@@ -51,7 +51,7 @@ python3 -m pip install ambivalent
 
 <div id="fig-chains">
 
-<img src="./assets/chains.svg" class="stretch"
+<img src="./docs/assets/chains.svg" class="stretch"
 data-ref-parent="fig-chains-dQ" />
 
 
@@ -149,7 +149,7 @@ _ = ax.set_ylabel('')
 </details>
 <div id="fig-py-tips-density">
 
-![](index_files/figure-commonmark/fig-py-tips-density-output-1.svg)
+![](docs/index_files/figure-commonmark/fig-py-tips-density-output-1.svg)
 
 
 Figure 13: Tips – Density Plot
@@ -186,7 +186,7 @@ _ = sns.scatterplot(x="carat", y="price",
 </details>
 <div id="fig-py-diamonds-scatter">
 
-![](index_files/figure-commonmark/fig-py-diamonds-scatter-output-1.svg)
+![](docs/index_files/figure-commonmark/fig-py-diamonds-scatter-output-1.svg)
 
 
 Figure 14: scatter plot with markers of varying size and color
@@ -225,7 +225,7 @@ _ = plt.show()
 </details>
 <div id="fig-py-hist-scatter">
 
-![](index_files/figure-commonmark/fig-py-hist-scatter-output-1.svg)
+![](docs/index_files/figure-commonmark/fig-py-hist-scatter-output-1.svg)
 
 
 Figure 15: Combo histogram + Scatter Plot with Density Contours
@@ -261,7 +261,7 @@ with mpl.rc_context(plt.rcParams.update({'axes.grid': False})):
 </details>
 <div id="fig-py-kde-2d">
 
-![](index_files/figure-commonmark/fig-py-kde-2d-output-1.svg)
+![](docs/index_files/figure-commonmark/fig-py-kde-2d-output-1.svg)
 
 
 Figure 16: Joint Distribution with Kernel Density Estimation
@@ -309,7 +309,7 @@ plt.show()
 </details>
 <div id="fig-py-mpl-hists">
 
-![](index_files/figure-commonmark/fig-py-mpl-hists-output-1.svg)
+![](docs/index_files/figure-commonmark/fig-py-mpl-hists-output-1.svg)
 
 
 Figure 17: Histograms with Matplotlib
