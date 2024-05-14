@@ -175,6 +175,7 @@ _ = ax.set_ylabel('')
 <!-- <details closed><summary><code>code</code>:</summary> -->
 
 ```{python}
+#| code-fold: true
 #| label: fig-py-diamonds-scatter
 #| output: asis
 #| fig-cap: "scatter plot with markers of varying size and color"
@@ -205,6 +206,7 @@ _ = sns.scatterplot(x="carat", y="price",
 <!-- <details closed><summary><code>code</code>:</summary> -->
 
 ```{python}
+#| code-fold: true
 #| label: fig-py-hist-scatter
 #| output: true
 #| fig-cap: "Combo histogram + Scatter Plot with Density Contours"
@@ -237,6 +239,7 @@ _ = plt.show()
 <!-- <details closed><summary><code>code</code>:</summary> -->
 
 ```{python}
+#| code-fold: true
 #| label: fig-py-kde-2d
 #| output: true
 #| fig-cap: "Joint Distribution with Kernel Density Estimation"
@@ -266,6 +269,7 @@ with mpl.rc_context(plt.rcParams.update({'axes.grid': False})):
 <!-- <details closed><summary><code>code</code>:</summary> -->
 
 ```{python}
+#| code-fold: true
 #| label: fig-py-mpl-hists
 #| output: true
 #| fig-cap: "Histograms with Matplotlib"

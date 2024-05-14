@@ -160,6 +160,8 @@ Figure 13: Tips – Density Plot
 ### `seaborn` Scatter Plot
 
 <!-- <details closed><summary><code>code</code>:</summary> -->
+<details class="code-fold">
+<summary>Code</summary>
 
 ``` python
 import seaborn as sns
@@ -181,6 +183,7 @@ _ = sns.scatterplot(x="carat", y="price",
                 data=diamonds, ax=ax)
 ```
 
+</details>
 <div id="fig-py-diamonds-scatter">
 
 ![](index_files/figure-commonmark/fig-py-diamonds-scatter-output-1.svg)
@@ -194,6 +197,8 @@ Figure 14: scatter plot with markers of varying size and color
 ### Histogram + Scatter Plot
 
 <!-- <details closed><summary><code>code</code>:</summary> -->
+<details class="code-fold">
+<summary>Code</summary>
 
 ``` python
 import numpy as np
@@ -217,6 +222,7 @@ _ = ax.set_ylabel('y')
 _ = plt.show()
 ```
 
+</details>
 <div id="fig-py-hist-scatter">
 
 ![](index_files/figure-commonmark/fig-py-hist-scatter-output-1.svg)
@@ -230,6 +236,8 @@ Figure 15: Combo histogram + Scatter Plot with Density Contours
 ### Jointplot
 
 <!-- <details closed><summary><code>code</code>:</summary> -->
+<details class="code-fold">
+<summary>Code</summary>
 
 ``` python
 import seaborn as sns
@@ -250,6 +258,7 @@ with mpl.rc_context(plt.rcParams.update({'axes.grid': False})):
   plt.show()
 ```
 
+</details>
 <div id="fig-py-kde-2d">
 
 ![](index_files/figure-commonmark/fig-py-kde-2d-output-1.svg)
@@ -263,6 +272,8 @@ Figure 16: Joint Distribution with Kernel Density Estimation
 ### Matplotlib Histograms
 
 <!-- <details closed><summary><code>code</code>:</summary> -->
+<details class="code-fold">
+<summary>Code</summary>
 
 ``` python
 import matplotlib.pyplot as plt
@@ -295,6 +306,7 @@ _ = fig.tight_layout()
 plt.show()
 ```
 
+</details>
 <div id="fig-py-mpl-hists">
 
 ![](index_files/figure-commonmark/fig-py-mpl-hists-output-1.svg)
@@ -440,7 +452,7 @@ Figure 17: Histograms with Matplotlib
 >
 > <span style="text-align:center;">![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsaforem2.github.io%2Fambivalent&count_bg=%23222222&title_bg=%23303030&icon=&icon_color=%23E7E7E7)</span>
 >
-> <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f; font-style: italic">Last Updated</span>: <span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">05</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">13</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">2024</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">@</span> <span style="color: #1a8fff; text-decoration-color: #1a8fff; font-weight: bold">20:19:41</span>
+> <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f; font-style: italic">Last Updated</span>: <span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">05</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">13</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">2024</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">@</span> <span style="color: #1a8fff; text-decoration-color: #1a8fff; font-weight: bold">20:30:03</span>
 > </pre>
 
 [^1]: Examples from [Matplotlib
