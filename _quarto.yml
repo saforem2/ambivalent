@@ -1,4 +1,4 @@
-title: "`ambivalent`"
+title: "`ambivalent` 🤷🏻‍"
 # title: ambivalent
 date: last-modified
 # date: today
@@ -23,6 +23,7 @@ project:
   render:
     - index.qmd
     - quarto/*.qmd
+    # - qmd/**/*.qmd
   type: website
   output-dir: "docs"
   preview:
@@ -36,7 +37,7 @@ author:
 citation:
    author: Sam Foreman
    type: webpage
-   # title: "ambivalent"
+   title: "ambivalent"
    url: https://saforem2.github.io/ambivalent
 # execute:
 #   # keep-ipynb: true

@@ -1,7 +1,8 @@
 website:
+  search: false
   description: "ambivalent: Minimal, beautiful (+ highly-customizable) styles for Matplotlib."
   page-navigation: true
-  title: "ambivalent"
+  # title: "ambivalent"
   site-url: "https://saforem2.github.io/ambivalent"
   favicon: "./favicon.svg"
   back-to-top-navigation: true
@@ -34,25 +35,25 @@ website:
     image: "https://github.com/saforem2/ambivalent/blob/main/assets/thumbnail.png?raw=true"
     site: "@saforem2"
     creator: "@saforem2"
-  navbar:
-    title: false
-    logo: "./favicon.svg"
-    background: "#222222"
-    foregound: "#838383"
-    right:
-      - href: https://twitter.com/saforem2
-        text: "[{{< iconify line-md twitter >}}]{style='font-size: 1.15em;'}"
-        aria-label: Twitter
-      - href: https://github.com/saforem2/ambivalent
-        text: "[{{< iconify line-md github-loop >}}]{style='font-size: 1.15em;'}"
-        aria-label: GitHub
-    tools:
-      - icon: github
-        menu:
-          - text: Source Code
-            url: https://github.com/saforem2/ambivalent/blob/master/index.qmd
-          - text: New Issue
-            url: https://github.com/saforem2/ambivalent/issues/new/choose
+  # navbar:
+  #   title: "ambivalent 🤷🏻‍"
+  #   logo: "./favicon.svg"
+  #   background: "#222222"
+  #   foregound: "#838383"
+  #   right:
+  #     - href: https://twitter.com/saforem2
+  #       text: "[{{< iconify line-md twitter >}}]{style='font-size: 1.15em;'}"
+  #       aria-label: Twitter
+  #     - href: https://github.com/saforem2/ambivalent
+  #       text: "[{{< iconify line-md github-loop >}}]{style='font-size: 1.15em;'}"
+  #       aria-label: GitHub
+  #   tools:
+  #     - icon: github
+  #       menu:
+  #         - text: Source Code
+  #           url: https://github.com/saforem2/ambivalent/blob/master/index.qmd
+  #         - text: New Issue
+  #           url: https://github.com/saforem2/ambivalent/issues/new/choose
   # sidebar:
   #   # header: "<code>ambivalent</code>"
   #   title: "<code>ambivalent</code>"
@@ -66,9 +67,9 @@ website:
   #   contents: auto
 
   page-footer:
-    # left: "Copyright 2023, Sam Foreman" 
+    left: "Copyright 2024, Sam Foreman"
     # right: "[samforeman.me](https://samforeman.me)"
-    left: ""
+    # left: ""
     right: ""
     center:
       - href: https://samforeman.me

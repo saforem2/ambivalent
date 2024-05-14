@@ -13,9 +13,9 @@ format:
     anchor-sections: true
     # highlight-style: atom-one
     code-overflow: scroll
-    code-fold: false
+    code-fold: true
     code-copy: hover
-    code-summary: " "
+    code-summary: "`code`:"
     code-tools:
       source: repo
       toggle: true
@@ -24,7 +24,7 @@ format:
     css:
       - css/default.css
       - css/callouts.css
-      - css/profile.css
+      # - css/profile.css
     theme:
       dark:
         - css/common.scss
@@ -77,7 +77,7 @@ format:
       - css/common.scss
       - css/dark.scss
       - css/syntax-dark.scss
-      - css/dark-reveal.scss
+      # - css/dark-reveal.scss
       # - white
       # - css/light.scss
       # - css/dark-reveal.scss

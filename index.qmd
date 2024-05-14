@@ -1,13 +1,13 @@
 ---
 site-url: https://saforem2.github.io/ambivalent
-editor:
-   render-on-save: true
-execute:
-   freeze: false
+# editor:
+#    render-on-save: true
+# execute:
+#    freeze: false
 format:
   html: default
-  revealjs:
-    output-file: slides.html
+  # revealjs:
+  #   output-file: slides.html
   gfm:
     default-image-extension: svg
     author: Sam Foreman
@@ -15,7 +15,7 @@ format:
 ---
 
 
-#  `ambivalent` 🤷🏻‍♂️ 
+<!-- #  `ambivalent` 🤷🏻‍♂️  -->
 
 [~~`opinionated`~~](https://github.com/saforem2/opinionated) $\longrightarrow$ [**`ambivalent`**](https://github.com/saforem2/ambivalent)
 
@@ -24,7 +24,13 @@ Clean, simple style for Matplotlib figures.
 Transparent backgrounds with grey text $\textcolor{#838383}{\blacksquare}$ that
 are accessible / legible and `{light, dark}`-mode independent.
 
-## Examples[^examples]
+## Install
+
+```bash
+python3 -m pip install ambivalent
+```
+
+## Gallery[^examples]
 
 [^examples]: Examples from [Matplotlib Examples](https://matplotlib.org/stable/gallery/index.html)
 
@@ -32,7 +38,7 @@ are accessible / legible and `{light, dark}`-mode independent.
 
 ::: {layout="[[40, 40]]" layout-valign="bottom" style="display: flex; text-align:center; align-items: flex-end;"}
 
-![[`seborn.jointplot`](https://seaborn.pydata.org/generated/seaborn.jointplot.html#seaborn.jointplot)](./assets/penguins.svg){#fig-penguins .stretch}
+![[`seaborn.jointplot`](https://seaborn.pydata.org/generated/seaborn.jointplot.html#seaborn.jointplot)](./assets/penguins.svg){#fig-penguins .stretch}
 
 ![[spectrum](https://matplotlib.org/stable/gallery/lines_bars_and_markers/spectrum_demo.html#sphx-glr-gallery-lines-bars-and-markers-spectrum-demo-py)](./assets/spectrum.svg){#fig-spectrum .stretch}
 
@@ -55,9 +61,9 @@ are accessible / legible and `{light, dark}`-mode independent.
 
 :::
 
-## More Examples
+<details closed><summary><italic>More Examples...</italic></summary>
 
-::: {.stretch layout="[[31, 31, 31]]" layout-valign="bottom" style="display: flex; text-align:center;"}
+::: {.stretch layout="[[31, 31, 31]]" layout-valign="bottom" style="display: flex; text-align:center!important;"}
 
 ![$|J_{f}|$](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_22.svg){#fig-ridgeplot1 .stretch}
 
@@ -67,8 +73,6 @@ are accessible / legible and `{light, dark}`-mode independent.
 
 :::
 
-<details closed><summary><italic>Even more...</italic></summary>
-
 ::: {#fig-chains-dQ layout="[[80]]" layout-valign="bottom" style="display: flex; text-align:center;"}
 
 ![$\delta Q_{\mathrm{train}}$](./assets/chains.svg){#fig-chains .stretch}
@@ -76,7 +80,6 @@ are accessible / legible and `{light, dark}`-mode independent.
 Figure from [`l2hmc-qcd` Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html#inference)
 
 :::
-
 
 ### InferenceData
 
@@ -124,24 +127,29 @@ import matplotlib_inline
 matplotlib_inline.backend_inline.set_matplotlib_formats('svg', 'retina')
 ```
 
-- Use `ambivalend.STYLES['ambivalent']` as the default style for `matplotlib`.
+<!-- - Use `ambivalend.STYLES['ambivalent']` as the default style for `matplotlib`. -->
 
 ```{python}
+#| code-fold: false
+#| echo: true
+import ambivalent
 import matplotlib.pyplot as plt
-from ambivalent import STYLES
-plt.style.use(STYLES['ambivalent'])
+plt.style.use(ambivalent.STYLES['ambivalent'])
 ```
 
-## `seaborn` Tips Dataset
+## Examples
 
-- [Tips Dataset Example](https://seaborn.pydata.org/generated/seaborn.kdeplot.html)
+### `seaborn` Tips Dataset
+
 - [Seaborn Gallery](https://seaborn.pydata.org/examples/index.html)
+    - [Tips Dataset Example](https://seaborn.pydata.org/generated/seaborn.kdeplot.html)
+
+<!-- <details closed><summary><code>code</code>:</summary> -->
 
 ```{python}
 #| code-fold: true
-#| code-summary: "View Code"
 #| label: fig-py-tips-density
-#| output: asis
+#| output: true
 #| fig-cap: "Tips -- Density Plot"
 #| layout: [[100]]
 import seaborn as sns
@@ -158,21 +166,17 @@ _ = sns.kdeplot(
    ax=ax,  # [0],
 )
 _ = ax.set_ylabel('')
-# _ = sns.kdeplot(
-#    data=tips, x="tip", hue="size",
-#    fill=True, common_norm=False, palette="crest",
-#    alpha=.3, linewidth=0,
-#    ax=ax[1],
-# )
 ```
 
-## `seaborn` Scatter Plot
+<!-- </details> -->
+
+### `seaborn` Scatter Plot
+
+<!-- <details closed><summary><code>code</code>:</summary> -->
 
 ```{python}
-#| code-fold: true
-#| code-summary: "View Code"
 #| label: fig-py-diamonds-scatter
-#| output: true
+#| output: asis
 #| fig-cap: "scatter plot with markers of varying size and color"
 #| layout: [[100]]
 import seaborn as sns
@@ -194,11 +198,13 @@ _ = sns.scatterplot(x="carat", y="price",
                 data=diamonds, ax=ax)
 ```
 
-## Histogram + Scatter Plot
+<!-- </details> -->
+
+### Histogram + Scatter Plot
+
+<!-- <details closed><summary><code>code</code>:</summary> -->
 
 ```{python}
-#| code-fold: true
-#| code-summary: "View Code"
 #| label: fig-py-hist-scatter
 #| output: true
 #| fig-cap: "Combo histogram + Scatter Plot with Density Contours"
@@ -224,11 +230,13 @@ _ = ax.set_ylabel('y')
 _ = plt.show()
 ```
 
-## Jointplot
+<!-- </details> -->
+
+### Jointplot
+
+<!-- <details closed><summary><code>code</code>:</summary> -->
 
 ```{python}
-#| code-fold: true
-#| code-summary: "View Code"
 #| label: fig-py-kde-2d
 #| output: true
 #| fig-cap: "Joint Distribution with Kernel Density Estimation"
@@ -244,7 +252,6 @@ with mpl.rc_context(plt.rcParams.update({'axes.grid': False})):
       x="bill_length_mm",
       y="bill_depth_mm",
       hue="species",
-      # kind="kde",
       edgecolors='none',
       alpha=0.4,
   )
@@ -252,11 +259,13 @@ with mpl.rc_context(plt.rcParams.update({'axes.grid': False})):
   plt.show()
 ```
 
-## Matplotlib Histograms
+<!-- </details> -->
+
+### Matplotlib Histograms
+
+<!-- <details closed><summary><code>code</code>:</summary> -->
 
 ```{python}
-#| code-fold: true
-#| code-summary: "View Code"
 #| label: fig-py-mpl-hists
 #| output: true
 #| fig-cap: "Histograms with Matplotlib"
@@ -290,6 +299,8 @@ _ = ax3.set_title('different sample sizes')
 _ = fig.tight_layout()
 plt.show()
 ```
+
+<!-- </details> -->
 
 
 <!-- ```{python} -->
@@ -428,7 +439,7 @@ plt.show()
 <!-- ``` -->
 
 
-::: {.callout-tip icon=false title='[{{< iconify material-symbols ecg-heart >}} Status]{style="color: #FF5252;"}' collapse="false" style="text-align: left!important; width:100%; border-color: var(--dim-text)!important; background-color: var(--bg-transparent); opacity:100%;"}
+::: {.callout-tip icon=false title='[💝 Status]{.dim-text}' collapse="false" style="text-align: left!important; width:100%; border: none!important; border-left: 1px solid var(--dim-text)!important; border-radius: 0pt!important; background-color: var(--bg-transparent); opacity:100%;"}
 
 [![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsaforem2.github.io%2Fambivalent&count_bg=%23222222&title_bg=%23303030&icon=&icon_color=%23E7E7E7)]{style="text-align:center;"}
 

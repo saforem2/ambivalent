@@ -1,6 +1,8 @@
-# `ambivalent` 🤷🏻‍♂️
+# `ambivalent` 🤷🏻‍
 Sam Foreman
-2023-12-29
+2024-05-13
+
+<!-- #  `ambivalent` 🤷🏻‍♂️  -->
 
 [~~`opinionated`~~](https://github.com/saforem2/opinionated)
 $\longrightarrow$
@@ -12,145 +14,51 @@ Transparent backgrounds with grey text
 $\textcolor{#838383}{\blacksquare}$ that are accessible / legible and
 `{light, dark}`-mode independent.
 
-## Examples[^1]
+## Install
+
+``` bash
+python3 -m pip install ambivalent
+```
+
+## Gallery[^1]
 
 <div class="flex" style="flex-direction:row;">
 
-<div layout-valign="bottom"
-style="display: flex; text-align:center; align-items: flex-end;">
-
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><div width="50.0%"
-data-layout-align="center">
-<p><img src="./assets/penguins.svg" id="fig-penguins" class="stretch"
-data-fig.extended="false" alt="Figure 1: seborn.jointplot" /></p>
-</div></td>
-<td style="text-align: center;"><div width="50.0%"
-data-layout-align="center">
-<p><img src="./assets/spectrum.svg" id="fig-spectrum" class="stretch"
-data-fig.extended="false" alt="Figure 2: spectrum" /></p>
-</div></td>
-</tr>
-</tbody>
-</table>
+<div>
 
 </div>
 
-<div layout-valign="bottom"
-style="display: flex; text-align:center; align-items: flex-end;">
-
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><div width="50.0%"
-data-layout-align="center">
-<p><img src="./assets/tipde-kde_r.svg" id="fig-tips-kde" class="stretch"
-data-fig.extended="false" alt="Figure 3: tips dataset" /></p>
-</div></td>
-<td style="text-align: center;"><div width="50.0%"
-data-layout-align="center">
-<p><img src="./assets/kde-2d_r.svg" id="fig-2d-kde" class="stretch"
-data-fig.extended="false" alt="Figure 4: 2D KDE" /></p>
-</div></td>
-</tr>
-</tbody>
-</table>
+<div>
 
 </div>
 
-<div style="display: flex; text-align:center;">
-
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><div width="100.0%"
-data-layout-align="center">
-<p><img src="./assets/mpl-hist.svg" id="fig-mpl-hist" class="stretch"
-data-fig.extended="false" alt="Figure 5: Histograms" /></p>
-</div></td>
-</tr>
-</tbody>
-</table>
+<div>
 
 </div>
-
-</div>
-
-## More Examples
-
-<div layout-valign="bottom" style="display: flex; text-align:center;">
-
-<table style="width:100%;">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><div width="33.3%"
-data-layout-align="center">
-<p><img
-src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_22.svg"
-id="fig-ridgeplot1" class="stretch" data-fig.extended="false"
-alt="Figure 6: |J_{f}|" /></p>
-</div></td>
-<td style="text-align: center;"><div width="33.3%"
-data-layout-align="center">
-<p><img
-src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_23.svg"
-id="fig-ridgeplot2" class="stretch" data-fig.extended="false"
-alt="Figure 7: |J_{b}|" /></p>
-</div></td>
-<td style="text-align: center;"><div width="33.3%"
-data-layout-align="center">
-<p><img
-src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_33_21.svg"
-id="fig-ridgeplot3" class="stretch" data-fig.extended="false"
-alt="Figure 8: |J|" /></p>
-</div></td>
-</tr>
-</tbody>
-</table>
 
 </div>
 
 <details closed>
 <summary>
-<italic>Even more…</italic>
+<italic>More Examples…</italic>
 </summary>
 
-<div id="fig-chains-dQ" layout-valign="bottom"
-style="display: flex; text-align:center;">
+<div>
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><div width="100.0%"
-data-layout-align="center">
-<p><img src="./assets/chains.svg" id="fig-chains" class="stretch"
-data-ref-parent="fig-chains-dQ" data-fig.extended="false"
-alt="(a) \delta Q_{\mathrm{train}}" /></p>
-</div></td>
-</tr>
-</tbody>
-</table>
+</div>
+
+<div id="fig-chains-dQ">
+
+<div id="fig-chains">
+
+<img src="./assets/chains.svg" class="stretch"
+data-ref-parent="fig-chains-dQ" />
+
+
+(a) $\delta Q_{\mathrm{train}}$
+
+</div>
+
 
 Figure 9: Figure from [`l2hmc-qcd`
 Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html#inference)
@@ -159,71 +67,67 @@ Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html#in
 
 ### InferenceData
 
-<div id="fig-xeps" style="display: flex; text-align:center;">
+<div id="fig-xeps">
 
 <img
 src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_30_68.svg"
 class="stretch" />
+
 
 Figure 10: $\varepsilon_{x}$ during training
 
 </div>
-
-<div id="fig-veps" style="display: flex; text-align:center;">
+<div id="fig-veps">
 
 <img
 src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_30_68.svg"
 class="stretch" />
 
+
 Figure 11: $\varepsilon_{x}$ during training
 
 </div>
+<div id="fig-combined-chains">
 
-<div id="fig-combined-chains" style="display: flex; text-align:center;">
+<div id="fig-dQhist">
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><div width="100.0%"
-data-layout-align="center">
-<p><img
+<img
 src="https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/assets/output_48_1.svg"
-id="fig-dQhist" class="stretch" data-ref-parent="fig-combined-chains"
-data-fig.extended="false" alt="(a) \sum \delta Q" /></p>
-</div></td>
-</tr>
-</tbody>
-</table>
+class="stretch" data-ref-parent="fig-combined-chains" />
+
+
+(a) $\sum \delta Q$
+
+</div>
+
 
 Figure 12: Figure from [`l2hmc-qcd`
 Notebook](https://saforem2.github.io/l2hmc-qcd/qmd/l2hmc-2dU1/l2hmc-2dU1.html)
 
 </div>
-
 </details>
 
 ## Getting Started
 
-- Use `ambivalend.STYLES['ambivalent']` as the default style for
-  `matplotlib`.
+<!-- - Use `ambivalend.STYLES['ambivalent']` as the default style for `matplotlib`. -->
 
 ``` python
+import ambivalent
 import matplotlib.pyplot as plt
-from ambivalent import STYLES
-plt.style.use(STYLES['ambivalent'])
+plt.style.use(ambivalent.STYLES['ambivalent'])
 ```
 
-## `seaborn` Tips Dataset
+## Examples
 
-- [Tips Dataset
-  Example](https://seaborn.pydata.org/generated/seaborn.kdeplot.html)
+### `seaborn` Tips Dataset
+
 - [Seaborn Gallery](https://seaborn.pydata.org/examples/index.html)
+  - [Tips Dataset
+    Example](https://seaborn.pydata.org/generated/seaborn.kdeplot.html)
 
-<details>
-<summary>View Code</summary>
+<!-- <details closed><summary><code>code</code>:</summary> -->
+<details class="code-fold">
+<summary>Code</summary>
 
 ``` python
 import seaborn as sns
@@ -240,24 +144,22 @@ _ = sns.kdeplot(
    ax=ax,  # [0],
 )
 _ = ax.set_ylabel('')
-# _ = sns.kdeplot(
-#    data=tips, x="tip", hue="size",
-#    fill=True, common_norm=False, palette="crest",
-#    alpha=.3, linewidth=0,
-#    ax=ax[1],
-# )
 ```
 
 </details>
+<div id="fig-py-tips-density">
 
-<img
-src="index_files/figure-commonmark/fig-py-tips-density-output-1.svg"
-id="fig-py-tips-density" alt="Figure 13: Tips – Density Plot" />
+![](index_files/figure-commonmark/fig-py-tips-density-output-1.svg)
 
-## `seaborn` Scatter Plot
 
-<details>
-<summary>View Code</summary>
+Figure 13: Tips – Density Plot
+
+</div>
+<!-- </details> -->
+
+### `seaborn` Scatter Plot
+
+<!-- <details closed><summary><code>code</code>:</summary> -->
 
 ``` python
 import seaborn as sns
@@ -279,17 +181,19 @@ _ = sns.scatterplot(x="carat", y="price",
                 data=diamonds, ax=ax)
 ```
 
-</details>
+<div id="fig-py-diamonds-scatter">
 
-<img
-src="index_files/figure-commonmark/fig-py-diamonds-scatter-output-1.svg"
-id="fig-py-diamonds-scatter"
-alt="Figure 14: scatter plot with markers of varying size and color" />
+![](index_files/figure-commonmark/fig-py-diamonds-scatter-output-1.svg)
 
-## Histogram + Scatter Plot
 
-<details>
-<summary>View Code</summary>
+Figure 14: scatter plot with markers of varying size and color
+
+</div>
+<!-- </details> -->
+
+### Histogram + Scatter Plot
+
+<!-- <details closed><summary><code>code</code>:</summary> -->
 
 ``` python
 import numpy as np
@@ -313,17 +217,19 @@ _ = ax.set_ylabel('y')
 _ = plt.show()
 ```
 
-</details>
+<div id="fig-py-hist-scatter">
 
-<img
-src="index_files/figure-commonmark/fig-py-hist-scatter-output-1.svg"
-id="fig-py-hist-scatter"
-alt="Figure 15: Combo histogram + Scatter Plot with Density Contours" />
+![](index_files/figure-commonmark/fig-py-hist-scatter-output-1.svg)
 
-## Jointplot
 
-<details>
-<summary>View Code</summary>
+Figure 15: Combo histogram + Scatter Plot with Density Contours
+
+</div>
+<!-- </details> -->
+
+### Jointplot
+
+<!-- <details closed><summary><code>code</code>:</summary> -->
 
 ``` python
 import seaborn as sns
@@ -337,7 +243,6 @@ with mpl.rc_context(plt.rcParams.update({'axes.grid': False})):
       x="bill_length_mm",
       y="bill_depth_mm",
       hue="species",
-      # kind="kde",
       edgecolors='none',
       alpha=0.4,
   )
@@ -345,16 +250,19 @@ with mpl.rc_context(plt.rcParams.update({'axes.grid': False})):
   plt.show()
 ```
 
-</details>
+<div id="fig-py-kde-2d">
 
-<img src="index_files/figure-commonmark/fig-py-kde-2d-output-1.svg"
-id="fig-py-kde-2d"
-alt="Figure 16: Joint Distribution with Kernel Density Estimation" />
+![](index_files/figure-commonmark/fig-py-kde-2d-output-1.svg)
 
-## Matplotlib Histograms
 
-<details>
-<summary>View Code</summary>
+Figure 16: Joint Distribution with Kernel Density Estimation
+
+</div>
+<!-- </details> -->
+
+### Matplotlib Histograms
+
+<!-- <details closed><summary><code>code</code>:</summary> -->
 
 ``` python
 import matplotlib.pyplot as plt
@@ -387,11 +295,15 @@ _ = fig.tight_layout()
 plt.show()
 ```
 
-</details>
+<div id="fig-py-mpl-hists">
 
-<img src="index_files/figure-commonmark/fig-py-mpl-hists-output-1.svg"
-id="fig-py-mpl-hists" alt="Figure 17: Histograms with Matplotlib" />
+![](index_files/figure-commonmark/fig-py-mpl-hists-output-1.svg)
 
+
+Figure 17: Histograms with Matplotlib
+
+</div>
+<!-- </details> -->
 <!-- ```{python} -->
 <!-- #| code-fold: true -->
 <!-- #| code-summary: "boxenplot" -->
@@ -522,16 +434,14 @@ id="fig-py-mpl-hists" alt="Figure 17: Histograms with Matplotlib" />
 <!-- plt.show() -->
 <!-- ``` -->
 
-<div>
-
-> **<span style="color: #FF5252;"> Status</span>**
+> [!TIP]
+>
+> ### <span class="dim-text">💝 Status</span>
 >
 > <span style="text-align:center;">![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsaforem2.github.io%2Fambivalent&count_bg=%23222222&title_bg=%23303030&icon=&icon_color=%23E7E7E7)</span>
 >
-> <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f; font-style: italic">Last Updated</span>: <span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">12</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">29</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">2023</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">@</span> <span style="color: #1a8fff; text-decoration-color: #1a8fff; font-weight: bold">10:42:06</span>
+> <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f; font-style: italic">Last Updated</span>: <span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">05</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">13</span><span style="color: #f06292; text-decoration-color: #f06292">/</span><span style="color: #f06292; text-decoration-color: #f06292; font-weight: bold">2024</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">@</span> <span style="color: #1a8fff; text-decoration-color: #1a8fff; font-weight: bold">20:19:41</span>
 > </pre>
-
-</div>
 
 [^1]: Examples from [Matplotlib
     Examples](https://matplotlib.org/stable/gallery/index.html)
