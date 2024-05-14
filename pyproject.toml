@@ -15,7 +15,7 @@ version_scheme = "no-guess-dev"
 [project]
 name = "ambivalent"
 description = 'Minimal, beautiful (+ highly-customizable) styles for Matplotlib.'
-readme = "README.md"
+readme = "docs/README.md"
 requires-python = ">=3.8"
 license = "MIT"
 keywords = []
