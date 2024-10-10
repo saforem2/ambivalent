@@ -1,6 +1,6 @@
 # `ambivalent` 🤷🏻‍
-Sam Foreman
-2024-05-13
+Sam Foreman  
+_2024-05-13_
 
 [~~`opinionated`~~](https://github.com/saforem2/opinionated)
 $\longrightarrow$
