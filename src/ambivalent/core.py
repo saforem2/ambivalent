@@ -28,32 +28,32 @@ WORKING_DIR = Path(os.getcwd())
 FONTS_DIR = WORKING_DIR.joinpath(".cache", "fonts")
 STYLES_DIR = HERE.joinpath("stylefiles")
 
-FONTS_DIR.mkdir(parents=True, exist_ok=True)
+# FONTS_DIR.mkdir(parents=True, exist_ok=True)
 STYLES_DIR.mkdir(parents=True, exist_ok=True)
 
 STYLE_FILES = list(STYLES_DIR.rglob("*.mplstyle"))
 STYLES = {f.stem: f.as_posix() for f in STYLE_FILES}
 
-FONT_NAMES = (
-    # 'Fira Sans',
-    # 'Fira Sans Condensed',
-    "IBM Plex Sans",
-    "IBM Plex Sans Condensed",
-    "IBM Plex Serif",
-    # 'Jost',
-    # 'Montserrat',
-    # 'Roboto',
-    # 'Roboto Condensed',
-    # 'Source Code Pro',
-    # 'Source Sans Pro',
-    # 'Space Grotesk',
-    # 'Space Mono',
-    # 'Titillium Web',
-    # 'Titillium WebRoboto Condensed',
-    # 'Shadows Into Light Two'
-)
+# FONT_NAMES = (
+#     # 'Fira Sans',
+#     # 'Fira Sans Condensed',
+#     # "IBM Plex Sans",
+#     # "IBM Plex Sans Condensed",
+#     # "IBM Plex Serif",
+#     # 'Jost',
+#     # 'Montserrat',
+#     # 'Roboto',
+#     # 'Roboto Condensed',
+#     # 'Source Code Pro',
+#     # 'Source Sans Pro',
+#     # 'Space Grotesk',
+#     # 'Space Mono',
+#     # 'Titillium Web',
+#     # 'Titillium WebRoboto Condensed',
+#     # 'Shadows Into Light Two'
+# )
 
-FONTS = {f: FONTS_DIR.joinpath(f) for f in FONT_NAMES}
+# FONTS = {f: FONTS_DIR.joinpath(f) for f in FONT_NAMES}
 
 
 def set_color_cycle(colors: list[str | Sequence[str | int]]) -> None:
@@ -64,11 +64,15 @@ def _download_font(font: str) -> requests.Response:
     return requests.get(f"https://fonts.google.com/download?family={font}")
 
 
-def save_font(font: str) -> None:
+def save_font(font: str, fonts_dir: Optional[str | Path] = None) -> None:
+    if fonts_dir is None:
+        fonts_dir = FONTS_DIR
+    fonts_dir = Path(str(fonts_dir))
+    fonts_dir.mkdir(exist_ok=True, parents=True)
     response = _download_font(font)
     z = zipfile.ZipFile(io.BytesIO(response.content))
-    z.extractall(FONTS_DIR)
-    zip_fp = FONTS_DIR.joinpath(f"{font}.zip")
+    z.extractall(fonts_dir)
+    zip_fp = fonts_dir.joinpath(f"{font}.zip")
     with open(zip_fp, "wb") as f:
         f.write(response.content)
     print(f"Font saved to: {FONTS_DIR}/{font}")

@@ -21,7 +21,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 from ambivalent.core import (
-    FONT_NAMES,
+    # FONT_NAMES,
     FONTS_DIR,
     PROJECT_DIR,
     STYLES,
@@ -117,8 +117,8 @@ def download_font_with_retry(
                 raise
 
 
-def update_fonts(verbose: Optional[bool] = False):
-    for font in FONT_NAMES:
+def update_fonts(font_names: list, verbose: Optional[bool] = False):
+    for font in font_names:
         if FONTS_DIR.joinpath(f"{font}.zip").is_file():
             if verbose:
                 log.debug(f"{font} already downloaded, continuing!")
@@ -128,5 +128,5 @@ def update_fonts(verbose: Optional[bool] = False):
     update_matplotlib_fonts()
 
 
-update_fonts()
+# update_fonts()
 reload_styles()
