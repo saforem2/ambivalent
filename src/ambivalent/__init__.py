@@ -1,6 +1,7 @@
 """
 src/ambivalent/__init__.py
 """
+
 # ruff: noqa: F401
 from __future__ import (
     absolute_import,
@@ -16,9 +17,6 @@ import shutil
 import time
 from pathlib import Path
 from typing import Optional
-
-# import matplotlib as mpl
-# import matplotlib.pyplot as plt
 
 from ambivalent.core import (
     # FONT_NAMES,
@@ -38,7 +36,7 @@ from ambivalent.core import (
 log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
 
-os.environ['PROJECT_DIR'] = os.path.abspath(PROJECT_DIR)
+os.environ["PROJECT_DIR"] = os.path.abspath(PROJECT_DIR)
 
 # __all__ = [
 #     'FONTS_DIR',
@@ -53,14 +51,21 @@ os.environ['PROJECT_DIR'] = os.path.abspath(PROJECT_DIR)
 
 
 def reload_styles(
-        outdir: Optional[os.PathLike] = None,
-        verbose: Optional[bool] = False,
+    outdir: Optional[os.PathLike] = None,
+    verbose: Optional[bool] = False,
 ):
-    import matplotlib as mpl
-    import matplotlib.pyplot as plt
+    try:
+        import matplotlib as mpl
+        import matplotlib.pyplot as plt
+    except (ImportError, ModuleNotFoundError) as e:
+        log.error(
+            "Matplotlib is not installed. Please install it to use this function."
+        )
+        raise e
     outdir = (
-        Path(mpl.get_configdir()).joinpath('stylelib')
-        if outdir is None else Path(outdir)
+        Path(mpl.get_configdir()).joinpath("stylelib")
+        if outdir is None
+        else Path(outdir)
     )
     outdir.mkdir(parents=True, exist_ok=True)
     for src in STYLES.values():
@@ -70,24 +75,10 @@ def reload_styles(
         shutil.copy2(src, dst)
 
     plt.style.reload_library()
-    # from ambivalent.core import STYLE_FILES
-    # ambivalent_stylesheets = plt.style.core.read_style_directory(STYLES_DIR)
-    plt.style.core.reload_library()
-    # styles = {f.stem: f.as_posix() for f in STYLE_FILES}
-    # plt.style.core.library.update(**styles)
-    # plt.style.library.update(STYLES)
-    # plt.style.core.update_nested_dict(
-    #     plt.style.library,
-    #     STYLES,
-    # )
-    plt.style.reload_library()
-    mpl_stylelib_dir = Path(mpl.get_configdir()).joinpath('stylelib')
+    mpl_stylelib_dir = Path(mpl.get_configdir()).joinpath("stylelib")
     mpl_stylelib_dir.mkdir(parents=True, exist_ok=True)
-    # # Update the list of available styles
+    # Update the list of available styles
     plt.style.core.available[:] = sorted(plt.style.library.keys())
-    # mpl.pyplot.style.core.available[:] = sorted(
-    #     mpl.pyplot.style.library.keys()
-    # )
     plt.style.reload_library()
 
 
@@ -96,10 +87,10 @@ def check_if_font_already_present(font):
 
 
 def download_font_with_retry(
-        font: str,
-        retries: int = 3,
-        delay: int = 3,
-        verbose: Optional[bool] = False,
+    font: str,
+    retries: int = 3,
+    delay: int = 3,
+    verbose: Optional[bool] = False,
 ) -> None:
     for i in range(retries):
         try:
@@ -111,7 +102,7 @@ def download_font_with_retry(
             if i < retries - 1:  # i is zero indexed
                 if verbose:
                     log.debug(
-                        f"Attempt {i+1} to download {font} failed with error:"
+                        f"Attempt {i + 1} to download {font} failed with error:"
                         f"{str(e)}. Retrying in {delay} seconds."
                     )
                 time.sleep(delay)
