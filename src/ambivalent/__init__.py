@@ -17,15 +17,15 @@ import time
 from pathlib import Path
 from typing import Optional
 
-import matplotlib as mpl
-import matplotlib.pyplot as plt
+# import matplotlib as mpl
+# import matplotlib.pyplot as plt
 
 from ambivalent.core import (
     # FONT_NAMES,
     FONTS_DIR,
     PROJECT_DIR,
     STYLES,
-    STYLES_DIR,
+    # STYLES_DIR,
     download_googlefont,
     update_matplotlib_fonts,
 )
@@ -56,6 +56,8 @@ def reload_styles(
         outdir: Optional[os.PathLike] = None,
         verbose: Optional[bool] = False,
 ):
+    import matplotlib as mpl
+    import matplotlib.pyplot as plt
     outdir = (
         Path(mpl.get_configdir()).joinpath('stylelib')
         if outdir is None else Path(outdir)
@@ -68,11 +70,16 @@ def reload_styles(
         shutil.copy2(src, dst)
 
     plt.style.reload_library()
-    ambivalent_stylesheets = plt.style.core.read_style_directory(STYLES_DIR)
-    plt.style.core.update_nested_dict(
-        plt.style.library,
-        ambivalent_stylesheets
-    )
+    # from ambivalent.core import STYLE_FILES
+    # ambivalent_stylesheets = plt.style.core.read_style_directory(STYLES_DIR)
+    plt.style.core.reload_library()
+    # styles = {f.stem: f.as_posix() for f in STYLE_FILES}
+    # plt.style.core.library.update(**styles)
+    # plt.style.library.update(STYLES)
+    # plt.style.core.update_nested_dict(
+    #     plt.style.library,
+    #     STYLES,
+    # )
     plt.style.reload_library()
     mpl_stylelib_dir = Path(mpl.get_configdir()).joinpath('stylelib')
     mpl_stylelib_dir.mkdir(parents=True, exist_ok=True)
