@@ -5,19 +5,16 @@ core.py
 from __future__ import absolute_import, annotations, division, print_function
 
 import requests
-import zipfile
 import os
 import sys
 from pathlib import Path
 import io
 
-import matplotlib as mpl
+# import matplotlib as mpl
 
 from typing import Optional, Sequence
 
-import matplotlib.pyplot as plt
-from matplotlib import font_manager as fm
-from IPython.core.display import HTML
+# import matplotlib.pyplot as plt
 
 PYTHON_VERSION = [int(i) for i in sys.version.split(" ")[0].split(".")]
 HERE = Path(os.path.abspath(__file__)).parent
@@ -57,7 +54,14 @@ STYLES = {f.stem: f.as_posix() for f in STYLE_FILES}
 
 
 def set_color_cycle(colors: list[str | Sequence[str | int]]) -> None:
-    plt.rcParams["axes.prop_cycle"] = plt.cycler("color", list(colors))
+    try:
+        import matplotlib.pyplot as plt
+        from cycler import cycler
+    except (ImportError, ModuleNotFoundError) as e:
+        print("Matplotlib is not installed. Please install it to use this function.")
+        raise e
+
+    plt.rcParams["axes.prop_cycle"] = cycler("color", list(colors))
 
 
 def _download_font(font: str) -> requests.Response:
@@ -65,6 +69,8 @@ def _download_font(font: str) -> requests.Response:
 
 
 def save_font(font: str, fonts_dir: Optional[str | Path] = None) -> None:
+    import zipfile
+
     if fonts_dir is None:
         fonts_dir = FONTS_DIR
     fonts_dir = Path(str(fonts_dir))
@@ -109,13 +115,25 @@ def show_installed_fonts():
     Show all installed fonts in a columnized HTML table. Works in notebooks
     only.
     """
+    try:
+        from matplotlib import font_manager as fm
+    except (ImportError, ModuleNotFoundError) as e:
+        print("IPython is not installed. Please install it to use this function.")
+        raise e
+
     code = "\n".join(
         [
             make_html(font)
             for font in sorted(set([f.name for f in fm.fontManager.ttflist]))
         ]
     )
-    HTML("<div style='column-count: 2;'>{}</div>".format(code))
+    try:
+        from IPython.core.display import HTML
+
+        HTML("<div style='column-count: 2;'>{}</div>".format(code))
+    except (ImportError, ModuleNotFoundError) as e:
+        print("IPython is not installed. Please install it to use this function.")
+        raise e
 
 
 def update_matplotlib_fonts():
@@ -123,6 +141,8 @@ def update_matplotlib_fonts():
     Useful if you downloaded googlefonts to the fonts folder
     (with download_googlefont) and want to use them in matplotlib.
     """
+    from matplotlib import font_manager as fm
+
     for font_file in fm.findSystemFonts(fontpaths=str(FONTS_DIR)):
         if (".ttf" in font_file) or (".otf" in font_file):
             try:
@@ -132,10 +152,14 @@ def update_matplotlib_fonts():
 
 
 def add_legend(*args, **kwargs):
+    from matplotlib import collections
+
+    import matplotlib.pyplot as plt
+
     fig: plt.Figure = plt.gcf()  # type:ignore
     ax: plt.Axes = plt.gca()  # type:ignore
     handles, _ = fig.axes[0].get_legend_handles_labels()
-    is_scatter = isinstance(handles[0], mpl.collections.PathCollection)
+    is_scatter = isinstance(handles[0], collections.PathCollection)
     # is_scatter = (type(handles[0]) == mpl.collections.PathCollection)
     # is_line_plot = (type(handles[0]) == mpl.lines.Line2D)
     # kwargs |= {"bbox_to_anchor": (1.05, .5)}
@@ -151,7 +175,7 @@ def add_legend(*args, **kwargs):
     legend = ax.legend(*args, **kwargs)
     # legend.get_title().set_fontweight('bold')
     if is_scatter:
-        [t.set_va("center_baseline") for t in legend.get_texts()]
+        [t.set_verticalalignment("center_baseline") for t in legend.get_texts()]
     return legend
 
 
@@ -159,6 +183,8 @@ def add_attribution(
     attrib: str,
     position: Optional[tuple[int, int]] = None,
 ):
+    import matplotlib.pyplot as plt
+
     # fig = plt.gcf()
     # bbox = {
     #     "facecolor":"orange",
@@ -188,6 +214,8 @@ def set_title_and_suptitle(
         position_sub_title (list, optional): The position of the subtitle.
             Defaults to [.12, .918].
     """
+    import matplotlib.pyplot as plt
+
     position_title = [0.12, 0.97] if position_title is None else position_title
     position_sub_title = (
         [0.12, 0.918] if position_sub_title is None else position_sub_title
@@ -200,6 +228,9 @@ def set_title_and_suptitle(
         )
     else:
         sub_title_string = title_string
+    if not isinstance(title_string, str):
+        raise TypeError("title_string must be a string")
+    # assert isinstance(sub_title_string, str)
     plt.figtext(
         position_sub_title[0],
         position_sub_title[1],
