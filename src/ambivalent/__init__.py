@@ -52,6 +52,40 @@ os.environ['PROJECT_DIR'] = os.path.abspath(PROJECT_DIR)
 # ]
 
 
+def _copy_styles_to_configdir(
+        outdir: Path,
+        verbose: Optional[bool] = False,
+) -> None:
+    """Copy the packaged ``.mplstyle`` files into ``outdir``.
+
+    May raise ``PermissionError``/``OSError`` if ``outdir`` (typically
+    matplotlib's config ``stylelib``) is not writable; callers handle that.
+    """
+    outdir.mkdir(parents=True, exist_ok=True)
+    for src in STYLES.values():
+        dst = outdir.joinpath(Path(src).stem)
+        if verbose:
+            log.debug(f"Copying {src} to {dst}")
+        shutil.copy2(src, dst)
+
+
+def _register_styles_in_memory() -> None:
+    """Register ambivalent's styles in matplotlib's in-memory library.
+
+    This makes ``plt.style.use('ambivalent')`` work by name for the current
+    process without touching disk. Must run *after* any
+    ``plt.style.reload_library()`` call, since reloading rebuilds the library
+    from disk and would otherwise discard these entries.
+    """
+    ambivalent_stylesheets = plt.style.core.read_style_directory(STYLES_DIR)
+    plt.style.core.update_nested_dict(
+        plt.style.library,
+        ambivalent_stylesheets,
+    )
+    # Update the list of available styles to match the library.
+    plt.style.core.available[:] = sorted(plt.style.library.keys())
+
+
 def reload_styles(
         outdir: Optional[os.PathLike] = None,
         verbose: Optional[bool] = False,
@@ -60,28 +94,24 @@ def reload_styles(
         Path(mpl.get_configdir()).joinpath('stylelib')
         if outdir is None else Path(outdir)
     )
-    outdir.mkdir(parents=True, exist_ok=True)
-    for src in STYLES.values():
-        dst = outdir.joinpath(Path(src).stem)
+    # Best-effort disk copy so `plt.style.use('ambivalent')` also persists
+    # across processes. Never fatal: shared/HPC installs often have a
+    # read-only matplotlib config dir, and importing ambivalent must not
+    # crash there. On failure we fall back to in-memory registration below.
+    try:
+        _copy_styles_to_configdir(outdir, verbose=verbose)
+    except (PermissionError, OSError) as e:
         if verbose:
-            log.debug(f"Copying {src} to {dst}")
-        shutil.copy2(src, dst)
+            log.debug(
+                f"Could not copy styles to {outdir} ({e}); "
+                "registering styles in-memory instead."
+            )
 
+    # Reload from disk FIRST (picks up the copy above when it succeeded),
+    # then register in-memory LAST so the styles are always available by
+    # name this session even when the copy failed. Nothing wipes them after.
     plt.style.reload_library()
-    ambivalent_stylesheets = plt.style.core.read_style_directory(STYLES_DIR)
-    plt.style.core.update_nested_dict(
-        plt.style.library,
-        ambivalent_stylesheets
-    )
-    plt.style.reload_library()
-    mpl_stylelib_dir = Path(mpl.get_configdir()).joinpath('stylelib')
-    mpl_stylelib_dir.mkdir(parents=True, exist_ok=True)
-    # # Update the list of available styles
-    plt.style.core.available[:] = sorted(plt.style.library.keys())
-    # mpl.pyplot.style.core.available[:] = sorted(
-    #     mpl.pyplot.style.library.keys()
-    # )
-    plt.style.reload_library()
+    _register_styles_in_memory()
 
 
 def check_if_font_already_present(font):
