@@ -106,6 +106,9 @@ def reload_styles(
                 f"Could not copy styles to {outdir} ({e}); "
                 "registering styles in-memory instead."
             )
+    else:
+        if verbose:
+            log.debug(f"Styles persisted to {outdir}.")
 
     # Reload from disk FIRST (picks up the copy above when it succeeded),
     # then register in-memory LAST so the styles are always available by

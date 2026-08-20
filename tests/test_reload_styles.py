@@ -17,6 +17,26 @@ import pytest
 import ambivalent
 
 
+@pytest.fixture(autouse=True)
+def _isolate_matplotlib_style_state():
+    """Snapshot/restore matplotlib's process-global style state.
+
+    These tests mutate ``plt.style.library``, ``plt.style.core.available``
+    and ``plt.rcParams``, all of which are global. Restoring them keeps the
+    suite order-independent as it grows.
+    """
+    saved_library = dict(plt.style.library)
+    saved_available = list(plt.style.core.available)
+    saved_rcparams = plt.rcParams.copy()
+    try:
+        yield
+    finally:
+        plt.style.library.clear()
+        plt.style.library.update(saved_library)
+        plt.style.core.available[:] = saved_available
+        plt.rcParams.update(saved_rcparams)
+
+
 def _make_readonly(path: Path) -> None:
     path.mkdir(parents=True, exist_ok=True)
     path.chmod(stat.S_IRUSR | stat.S_IXUSR)  # r-x------ : no write
@@ -40,6 +60,10 @@ def test_reload_styles_registers_style_by_name_when_copy_fails(tmp_path):
     try:
         ambivalent.reload_styles(outdir=readonly)
         assert "ambivalent" in plt.style.library
+        # Registered by name is not enough -- it must actually apply.
+        before = plt.rcParams.copy()
+        plt.style.use("ambivalent")
+        assert plt.rcParams != before, "style.use('ambivalent') changed nothing"
     finally:
         readonly.chmod(stat.S_IRWXU)
 
