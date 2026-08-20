@@ -25,10 +25,32 @@ PROJECT_DIR = HERE.parent.parent
 
 WORKING_DIR = Path(os.getcwd())
 
-FONTS_DIR = WORKING_DIR.joinpath(".cache", "fonts")
+
+def _default_fonts_dir() -> Path:
+    """Resolve a stable, per-user location for the downloaded-fonts cache.
+
+    Independent of the current working directory (an import-time coupling
+    that breaks when the launch dir differs or is read-only). Resolution
+    order:
+
+    1. ``$AMBIVALENT_FONTS_DIR`` if set (explicit override, e.g. writable
+       scratch on a shared HPC filesystem),
+    2. ``$XDG_CACHE_HOME/ambivalent/fonts`` if ``XDG_CACHE_HOME`` is set,
+    3. ``~/.cache/ambivalent/fonts`` otherwise.
+    """
+    override = os.environ.get("AMBIVALENT_FONTS_DIR")
+    if override:
+        return Path(override).expanduser()
+    xdg_cache = os.environ.get("XDG_CACHE_HOME")
+    base = Path(xdg_cache).expanduser() if xdg_cache else Path.home() / ".cache"
+    return base / "ambivalent" / "fonts"
+
+
+FONTS_DIR = _default_fonts_dir()
 STYLES_DIR = HERE.joinpath("stylefiles")
 
-# FONTS_DIR.mkdir(parents=True, exist_ok=True)
+# FONTS_DIR is created lazily (see save_font); do not mkdir at import time so
+# merely importing ambivalent never touches the filesystem for fonts.
 STYLES_DIR.mkdir(parents=True, exist_ok=True)
 
 STYLE_FILES = list(STYLES_DIR.rglob("*.mplstyle"))
