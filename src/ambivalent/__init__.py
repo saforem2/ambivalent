@@ -77,13 +77,19 @@ def _register_styles_in_memory() -> None:
     ``plt.style.reload_library()`` call, since reloading rebuilds the library
     from disk and would otherwise discard these entries.
     """
-    ambivalent_stylesheets = plt.style.core.read_style_directory(STYLES_DIR)
-    plt.style.core.update_nested_dict(
+    # matplotlib 3.11 deprecated `matplotlib.style.core` (removal in 3.13) and
+    # promoted these helpers onto `matplotlib.style` itself. `style.core` is
+    # still importable there but is no longer an ATTRIBUTE of `style`, so the
+    # old `plt.style.core.<fn>` access raises AttributeError. Resolve against
+    # `plt.style` first, falling back to `.core` for matplotlib < 3.11.
+    _api = plt.style if hasattr(plt.style, "read_style_directory") else plt.style.core
+    ambivalent_stylesheets = _api.read_style_directory(STYLES_DIR)
+    _api.update_nested_dict(
         plt.style.library,
         ambivalent_stylesheets,
     )
     # Update the list of available styles to match the library.
-    plt.style.core.available[:] = sorted(plt.style.library.keys())
+    _api.available[:] = sorted(plt.style.library.keys())
 
 
 def reload_styles(
