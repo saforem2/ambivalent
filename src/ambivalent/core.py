@@ -17,7 +17,6 @@ from typing import Optional, Sequence
 
 import matplotlib.pyplot as plt
 from matplotlib import font_manager as fm
-from IPython.core.display import HTML
 
 PYTHON_VERSION = [int(i) for i in sys.version.split(" ")[0].split(".")]
 HERE = Path(os.path.abspath(__file__)).parent
@@ -131,13 +130,18 @@ def show_installed_fonts():
     Show all installed fonts in a columnized HTML table. Works in notebooks
     only.
     """
+    # Imported here, not at module scope: IPython is a notebook-only
+    # dependency and is NOT in `dependencies`, so a top-level import made the
+    # whole package unimportable in a headless/plotting-script environment.
+    from IPython.core.display import HTML
+
     code = "\n".join(
         [
             make_html(font)
             for font in sorted(set([f.name for f in fm.fontManager.ttflist]))
         ]
     )
-    HTML("<div style='column-count: 2;'>{}</div>".format(code))
+    return HTML("<div style='column-count: 2;'>{}</div>".format(code))
 
 
 def update_matplotlib_fonts():
